@@ -1,0 +1,24 @@
+# dependencies
+node_modules
+
+# outputs
+build
+dist
+lib
+coverage
+*.tsbuildinfo
+
+# tooling
+.husky/_
+
+# logs
+*.log*
+
+# env
+.env
+.env.*
+
+# misc
+.DS_Store
+.idea/
+.vscode/

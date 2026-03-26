@@ -1,0 +1,19 @@
+{
+  "name": "@silverhand/tools-i18n",
+  "version": "0.0.0",
+  "description": "Shared i18n contracts for public tools.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "precommit": "lint-staged",
+    "dev": "tsc -w -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo \"No tests yet for @silverhand/tools-i18n\""
+  }
+}
