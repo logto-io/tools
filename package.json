@@ -1,5 +1,5 @@
 {
-  "name": "@silverhand/tools-root",
+  "name": "@logto/tools-root",
   "private": true,
   "license": "ISC",
   "type": "module",
