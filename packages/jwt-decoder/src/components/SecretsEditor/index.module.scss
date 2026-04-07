@@ -1,0 +1,78 @@
+@use '../../scss/underscore' as _;
+@use '../../scss/media' as media;
+
+.secretForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: _.unit(6);
+
+  .editorPanel {
+    flex: 1;
+  }
+}
+
+.editorTitle {
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: _.unit(1.5);
+}
+
+.jwksUrlInput,
+.secretEditor {
+  border-radius: 8px;
+  width: 100%;
+  color: #fff;
+  border: 2px solid #ffffff80;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: 'Roboto Mono', monospace;
+  padding: _.unit(6);
+  background: none;
+}
+
+.secretEditor {
+  resize: vertical;
+  min-height: _.unit(32);
+}
+
+.editorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: _.unit(2);
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  color: #af9eff;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  gap: _.unit(1);
+
+  &:active,
+  &:hover {
+    color: #4300da;
+  }
+}
+
+.encodeCheckbox label {
+  color: #af9eff;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  gap: _.unit(1);
+  user-select: none;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 70%);
+  font-size: 14px;
+  line-height: 20px;
+}

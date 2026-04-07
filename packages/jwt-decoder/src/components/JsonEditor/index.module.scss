@@ -1,0 +1,76 @@
+@use '../../scss/underscore' as _;
+@use '../../scss/media' as media;
+
+.editorPanel {
+  &:first-child {
+    margin-bottom: _.unit(6);
+  }
+}
+
+.jsonEditor {
+  border-radius: 8px;
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  direction: ltr;
+  background: #141420;
+  border: 2px solid #ffffff80;
+  font-family: 'Roboto Mono', monospace;
+
+  &.readOnly {
+    background-color: rgba(209, 210, 255, 15%);
+    border: none;
+  }
+
+  &.fallback {
+    padding: _.unit(6);
+    resize: none;
+    font-family: inherit;
+    height: _.unit(17);
+  }
+
+  pre {
+    /* stylelint-disable-next-line declaration-no-important -- overwrite react-simple-code-editor hardcoded inline style */
+    word-break: break-all !important;
+  }
+
+  textarea {
+    /* stylelint-disable-next-line declaration-no-important -- overwrite react-simple-code-editor hardcoded inline style */
+    word-break: break-all !important;
+  }
+}
+
+.editorTitle {
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: _.unit(1.5);
+}
+
+:global {
+  .token.comment {
+    color: #6c6c6c;
+  }
+
+  .token.punctuation {
+    opacity: 70%;
+  }
+
+  .token.property {
+    color: #42c4ed;
+  }
+
+  .token.operator {
+    margin-right: 2px;
+  }
+
+  .token.boolean,
+  .token.number,
+  .token.string,
+  .token.keyword,
+  .token.symbol {
+    color: #f6dd5a;
+  }
+}

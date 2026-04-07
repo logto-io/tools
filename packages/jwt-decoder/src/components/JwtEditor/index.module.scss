@@ -1,0 +1,105 @@
+@use '../../scss/underscore' as _;
+@use '../../scss/media' as media;
+
+.editorPanel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.editorTitle {
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: _.unit(1.5);
+}
+
+.jwtEditor {
+  border-radius: 8px;
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  flex: 1;
+  direction: ltr;
+  background: #141420;
+  border: 2px solid #ffffff80;
+  font-family: 'Roboto Mono', monospace;
+
+  &.readOnly {
+    background-color: rgba(209, 210, 255, 15%);
+    border-color: transparent;
+  }
+
+  &.fallback {
+    padding: _.unit(6);
+    resize: none;
+    font-family: inherit;
+  }
+
+  &.signatureVerified {
+    background: rgba(50, 135, 61, 15%);
+    border-color: #32873d;
+  }
+
+  &.signatureInvalid {
+    background: rgba(148, 3, 65, 15%);
+    border-color: #940341;
+  }
+
+  pre {
+    /* stylelint-disable-next-line declaration-no-important -- overwrite react-simple-code-editor hardcoded inline style */
+    word-break: break-all !important;
+  }
+
+  textarea {
+    /* stylelint-disable-next-line declaration-no-important -- overwrite react-simple-code-editor hardcoded inline style */
+    word-break: break-all !important;
+  }
+}
+
+.signatureStatus {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: _.unit(3.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  > svg {
+    margin-right: _.unit(1);
+  }
+
+  &.verified {
+    background: #32873d;
+  }
+
+  &.invalid {
+    background: #940341;
+  }
+}
+
+:global {
+  .token.tokenHeader {
+    color: #ff589d;
+  }
+
+  .token.tokenPayload {
+    color: #bf85ff;
+  }
+
+  .token.tokenSignature {
+    color: #42c4ed;
+  }
+}
+

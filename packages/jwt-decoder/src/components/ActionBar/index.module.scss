@@ -1,0 +1,29 @@
+@use '../../scss/underscore' as _;
+@use '../../scss/media' as media;
+
+.actionBar {
+  width: 100%;
+  display: flex;
+  gap: _.unit(6);
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin: _.unit(6) 0;
+
+  .examplesButton {
+    color: #fff;
+
+    svg {
+      margin-inline-start: _.unit(2);
+    }
+  }
+}
+
+.examplesDropdown {
+  color: #fff;
+  background: #34354a;
+
+  li {
+    font-weight: 600;
+    padding: _.unit(2) _.unit(3);
+  }
+}

@@ -1,0 +1,23 @@
+@use '../../scss/underscore' as _;
+@use '../../scss/media' as media;
+
+.section {
+  padding-bottom: _.unit(20);
+  background: #141420;
+
+  @include media.mobile {
+    padding-bottom: _.unit(12);
+  }
+
+  &.light {
+    background: #fff;
+  }
+}
+
+.contentWrapper {
+  @include _.section-container;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

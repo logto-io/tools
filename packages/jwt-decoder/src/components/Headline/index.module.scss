@@ -1,0 +1,84 @@
+@use '../../scss/underscore' as _;
+@use '../../scss/media' as media;
+
+.headline {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  color: #fff;
+  margin: _.unit(25) 0 _.unit(16);
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: _.unit(3);
+
+  h1 {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+  }
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 26px;
+  color: #ffffffb3;
+  text-align: center;
+  margin: _.unit(-12) 0 _.unit(16);
+  max-width: 900px;
+  z-index: 0;
+
+  &.light {
+    color: #747778;
+  }
+}
+
+.spacer,
+.switchButton {
+  opacity: 30%;
+  color: #fffbff;
+}
+
+.switchButton {
+  background: none;
+  border: none;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  padding: _.unit(1) _.unit(2);
+
+  &:hover {
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 10%);
+    opacity: 60%;
+  }
+}
+
+@include media.medium {
+  .headline,
+  .subtitle {
+    max-width: 80%;
+  }
+}
+
+@include media.mobile {
+  .headline {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: bold;
+    margin: _.unit(12) 0 _.unit(8);
+    text-align: start;
+    align-self: start;
+    flex-direction: column;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    margin: _.unit(-4) 0 _.unit(12);
+    text-align: start;
+    align-self: start;
+  }
+}
