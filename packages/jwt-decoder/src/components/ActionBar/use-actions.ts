@@ -55,10 +55,14 @@ const useActions = () => {
   );
 
   const onShareUrl = useCallback(async () => {
-    const url = new URL(window.location.href);
-    url.searchParams.set(QueryParam.Token, jwt);
-    await navigator.clipboard.writeText(url.toString());
-    toast.success(t('copy_to_clipboard'));
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set(QueryParam.Token, jwt);
+      await navigator.clipboard.writeText(url.toString());
+      toast.success(t('copy_to_clipboard'));
+    } catch {
+      toast.error('Failed to copy URL to clipboard');
+    }
   }, [jwt, t]);
 
   return {

@@ -1,45 +1,26 @@
 import classNames from 'classnames';
 import { type PropsWithChildren } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-import { toolRoutes } from '../routes';
+import WebsiteTopbar from '../components/WebsiteTopbar';
+import { type Language } from '../i18n';
 
 import styles from './AppShell.module.scss';
 
-const AppShell = ({ children }: PropsWithChildren) => {
+type Props = PropsWithChildren<{
+  readonly currentLanguage: Language;
+  readonly onLanguageChange: (language: Language) => void;
+}>;
+
+const AppShell = ({ children, currentLanguage, onLanguageChange }: Props) => {
+  const { pathname } = useLocation();
+
   return (
     <div className={styles.page}>
-      <header className={styles.topbar}>
-        <div className={styles.inner}>
-          <Link className={styles.logo} to="/jwt-decoder">
-            Logto Tools
-          </Link>
-          <nav className={styles.nav}>
-            {toolRoutes.map((route) => {
-              const disabled = 'disabled' in route && route.disabled;
-
-              return (
-                <span
-                  key={route.id}
-                  className={classNames(styles.navItem, disabled && styles.disabled)}
-                >
-                  {disabled ? (
-                    route.title
-                  ) : (
-                    <NavLink
-                      to={route.path}
-                      className={({ isActive }) => classNames(isActive && styles.active)}
-                    >
-                      {route.title}
-                    </NavLink>
-                  )}
-                </span>
-              );
-            })}
-          </nav>
-        </div>
-      </header>
-      <main className={styles.content}>{children}</main>
+      <WebsiteTopbar currentLanguage={currentLanguage} onLanguageChange={onLanguageChange} />
+      <main className={classNames(styles.main, pathname === '/' && styles.homeMain)}>
+        {children}
+      </main>
     </div>
   );
 };

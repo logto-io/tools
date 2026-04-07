@@ -5,6 +5,7 @@ import {
   type ReactNode,
   useMemo,
   useEffect,
+  useRef,
   useState,
 } from 'react';
 
@@ -27,6 +28,8 @@ type I18NovaContextType<Language extends string, Phrases extends BasePhrases> = 
   currentLanguage?: Language;
 };
 
+const GlobalCurrentLanguageContext = createContext<string | undefined>(undefined);
+
 type I18NovaContextProviderProps<Language extends string> = {
   readonly children: ReactNode;
   readonly currentLanguage: Language;
@@ -43,23 +46,39 @@ export const create = <Language extends string, Phrases extends BasePhrases>(
     // Use to force re-render when lazy loading phrases is done
     const [state, setState] = useState(0);
     const [language, setLanguage] = useState(currentLanguage);
+    const requestIdRef = useRef(0);
     const value = useMemo(() => ({ i18Nova, currentLanguage: language }), [language]);
 
     useEffect(() => {
+      // Keep context language in sync with prop regardless of loading state.
+      setLanguage(currentLanguage);
+
       if (i18Nova.hasLoaded(currentLanguage)) {
+        setState(Math.random());
         return;
       }
+
+      const requestId = requestIdRef.current + 1;
+      // eslint-disable-next-line @silverhand/fp/no-mutation
+      requestIdRef.current = requestId;
+
       (async () => {
         await i18Nova.loadPhrases(currentLanguage);
-        setLanguage(currentLanguage);
+
+        if (requestIdRef.current !== requestId) {
+          return;
+        }
+
         setState(Math.random());
       })();
     }, [currentLanguage]);
 
     return (
-      <I18NovaContext.Provider key={`${language}.${state}`} value={value}>
-        {children}
-      </I18NovaContext.Provider>
+      <GlobalCurrentLanguageContext.Provider value={language}>
+        <I18NovaContext.Provider key={`${language}.${state}`} value={value}>
+          {children}
+        </I18NovaContext.Provider>
+      </GlobalCurrentLanguageContext.Provider>
     );
   };
 
@@ -125,4 +144,8 @@ export const create = <Language extends string, Phrases extends BasePhrases>(
     I18NovaContext,
     I18NovaProvider,
   };
+};
+
+export const useGlobalCurrentLanguage = (): string | undefined => {
+  return useContext(GlobalCurrentLanguageContext);
 };

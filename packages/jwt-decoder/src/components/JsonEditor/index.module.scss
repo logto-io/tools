@@ -1,5 +1,6 @@
-@use '../../scss/underscore' as _;
-@use '../../scss/media' as media;
+@use '@logto/tools-components/src/scss/underscore' as _;
+@use '@logto/tools-components/src/scss/media' as media;
+@use '@logto/tools-components/src/scss/tool-surface' as surface;
 
 .editorPanel {
   &:first-child {
@@ -8,15 +9,8 @@
 }
 
 .jsonEditor {
-  border-radius: 8px;
-  width: 100%;
-  color: #fff;
-  font-size: 14px;
-  line-height: 20px;
-  direction: ltr;
+  @include surface.code-editor-base;
   background: #141420;
-  border: 2px solid #ffffff80;
-  font-family: 'Roboto Mono', monospace;
 
   &.readOnly {
     background-color: rgba(209, 210, 255, 15%);
@@ -42,11 +36,7 @@
 }
 
 .editorTitle {
-  color: #fff;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  margin-bottom: _.unit(1.5);
+  @include surface.editor-title;
 }
 
 :global {

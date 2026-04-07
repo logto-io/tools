@@ -1,5 +1,6 @@
-@use '../../scss/underscore' as _;
-@use '../../scss/media' as media;
+@use '@logto/tools-components/src/scss/underscore' as _;
+@use '@logto/tools-components/src/scss/media' as media;
+@use '@logto/tools-components/src/scss/tool-surface' as surface;
 
 .secretForm {
   width: 100%;
@@ -13,22 +14,12 @@
 }
 
 .editorTitle {
-  color: #fff;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  margin-bottom: _.unit(1.5);
+  @include surface.editor-title;
 }
 
 .jwksUrlInput,
 .secretEditor {
-  border-radius: 8px;
-  width: 100%;
-  color: #fff;
-  border: 2px solid #ffffff80;
-  font-size: 14px;
-  line-height: 20px;
-  font-family: 'Roboto Mono', monospace;
+  @include surface.code-editor-base;
   padding: _.unit(6);
   background: none;
 }

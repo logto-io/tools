@@ -1,5 +1,25 @@
 export const toolRoutes = [
-  { id: 'jwt-decoder', title: 'JWT decoder', path: '/jwt-decoder' },
-  { id: 'saml-decoder', title: 'SAML assertion decoder', path: '/saml-decoder', disabled: true },
-  { id: 'base64-decoder', title: 'Base64 decoder', path: '/base64-decoder', disabled: true },
+  {
+    id: 'jwtDecoder',
+    path: '/jwt-decoder',
+    titleKey: 'tools.jwtDecoder.title',
+    descriptionKey: 'tools.jwtDecoder.description',
+  },
+  {
+    id: 'samlDecoder',
+    path: '/saml-decoder',
+    titleKey: 'tools.samlDecoder.title',
+    descriptionKey: 'tools.samlDecoder.description',
+    disabled: true,
+  },
+  {
+    id: 'base64Decoder',
+    path: '/base64-decoder',
+    titleKey: 'tools.base64Decoder.title',
+    descriptionKey: 'tools.base64Decoder.description',
+    disabled: true,
+  },
 ] as const;
+
+export type ToolRoute = (typeof toolRoutes)[number];
+export type ToolRouteId = ToolRoute['id'];

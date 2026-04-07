@@ -13,11 +13,15 @@ import { JwtContextProvider } from './context/JwtContextProvider';
 import styles from './index.module.scss';
 import { EditorMode } from './types';
 
-const Decoder = () => {
+type Props = {
+  readonly className?: string;
+};
+
+const Decoder = ({ className }: Props) => {
   const [mode, setMode] = useState<EditorMode>(EditorMode.Decode);
 
   return (
-    <Section className={styles.section}>
+    <Section className={className}>
       <JwtContextProvider mode={mode} setMode={setMode}>
         <HeaderPayloadEditorContextProvider>
           <Headline />

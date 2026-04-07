@@ -84,12 +84,18 @@ importers:
 
   packages/dev-app:
     dependencies:
+      '@logto/tools-components':
+        specifier: workspace:^
+        version: link:../components
       '@logto/tools-jwt-decoder':
         specifier: workspace:^
         version: link:../jwt-decoder
       classnames:
         specifier: ^2.3.1
         version: 2.5.1
+      i18nova:
+        specifier: workspace:^
+        version: link:../i18nova
       react:
         specifier: ^18.3.1
         version: 18.3.1
