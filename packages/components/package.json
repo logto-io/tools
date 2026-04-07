@@ -1,7 +1,7 @@
 {
-  "name": "@logto/tools-jwt-decoder",
+  "name": "@logto/tools-components",
   "version": "0.0.0",
-  "description": "JWT decoder and encoder package for Logto tools.",
+  "description": "Local shared UI components for Logto tools.",
   "type": "module",
   "main": "src/index.ts",
   "files": [
@@ -9,47 +9,28 @@
   ],
   "scripts": {
     "precommit": "lint-staged --config ../../lint-staged.config.cjs",
-    "dev": "vitest",
     "build": "tsc",
     "lint": "eslint --ext .ts --ext .tsx src",
     "stylelint": "stylelint \"src/**/*.scss\"",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
-  },
-  "engines": {
-    "node": "^22.0.0"
-  },
-  "dependencies": {
-    "@logto/tools-components": "workspace:^",
-    "@silverhand/essentials": "^2.9.1",
-    "classnames": "^2.3.1",
-    "i18nova": "workspace:^",
-    "jose": "^6.0.0",
-    "prismjs": "^1.30.0",
-    "react": "^18.3.1",
-    "react-hot-toast": "^2.4.0",
-    "react-simple-code-editor": "^0.14.1",
-    "use-debounce": "^10.0.4"
+    "test": "echo \"No tests yet for tools components\""
   },
   "devDependencies": {
     "@silverhand/eslint-config": "^6.0.1",
     "@silverhand/eslint-config-react": "^6.0.2",
     "@silverhand/ts-config": "^6.0.0",
     "@silverhand/ts-config-react": "^6.0.0",
-    "@testing-library/react": "^16.3.0",
-    "@types/prismjs": "^1.26.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "eslint": "^8.56.0",
-    "jsdom": "^26.1.0",
     "lint-staged": "^16.0.0",
     "prettier": "^3.0.0",
     "stylelint": "^15.2.0",
-    "typescript": "^5.7.2",
-    "vite": "^6.2.7",
-    "vite-plugin-svgr": "^4.5.0",
-    "vite-tsconfig-paths": "^6.0.0",
-    "vitest": "^3.2.4"
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "react": "^18.3.1"
   },
   "eslintConfig": {
     "extends": "@silverhand/react",

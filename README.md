@@ -1,41 +1,30 @@
 # tools
 
-Public monorepo for website tools that can be embedded into the private website or deployed independently.
+Public monorepo for Logto developer tools that can be developed independently and embedded back into the private website.
 
-## Goals
+## Packages
 
-- Keep tool implementation public.
-- Keep the website host app private.
-- Preserve a single source of truth for layout and design integration.
-- Ensure tools are i18n-ready from day one.
+- `packages/i18nova`: shared i18n runtime copied from website.
+- `packages/jwt-decoder`: reusable JWT decoder and encoder package.
+- `packages/dev-app`: local development app for tool packages.
 
-## Workspace structure
-
-- `packages/jwt-decoder`: JWT Decoder tool package (starter scaffold).
-- `packages/tool-shell`: shared tool runtime contract and layout integration helpers.
-- `packages/i18n`: shared i18n types/utilities for tools.
-
-## Getting started
+## Commands
 
 ```bash
 pnpm install
 pnpm start
-```
-
-## Common commands
-
-```bash
 pnpm lint
+pnpm stylelint
 pnpm typecheck
 pnpm test
 pnpm build
 ```
 
-## Commit hooks
+## Development rules
 
-- `pre-commit`: runs each changed workspace `precommit` script.
-- `commit-msg`: validates commit messages with commitlint.
+This repo follows the website repo conventions as closely as practical:
 
-## Notes
-
-This repository is intended to be consumed by the private website repo via package dependency/version pinning.
+- `pnpm` workspace scripts
+- `husky` + `lint-staged`
+- Conventional commits via `commitlint`
+- `@silverhand/*` TypeScript, ESLint, Prettier, and Stylelint configs inside packages

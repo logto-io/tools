@@ -1,0 +1,51 @@
+{
+  "name": "i18nova",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "default": "./src/index.ts",
+      "types": "./src/index.ts"
+    },
+    "./react": {
+      "import": "./src/react/index.tsx",
+      "default": "./src/react/index.tsx",
+      "types": "./src/react/index.tsx"
+    }
+  },
+  "scripts": {
+    "precommit": "lint-staged --config ../../lint-staged.config.cjs",
+    "test": "echo \"No tests yet for i18nova\"",
+    "build": "tsc",
+    "lint": "eslint --ext .ts --ext .tsx src",
+    "stylelint": "echo \"No SCSS files in i18nova\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@silverhand/eslint-config": "^6.0.1",
+    "@silverhand/eslint-config-react": "^6.0.2",
+    "@silverhand/ts-config": "^6.0.0",
+    "@silverhand/ts-config-react": "^6.0.0",
+    "@types/react": "^18.3.3",
+    "eslint": "^8.56.0",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.0.0",
+    "react": "^18.3.1",
+    "stylelint": "^15.2.0",
+    "typescript": "^5.7.2"
+  },
+  "eslintConfig": {
+    "extends": "@silverhand/react"
+  },
+  "prettier": "@silverhand/eslint-config/.prettierrc",
+  "dependencies": {
+    "@silverhand/essentials": "^2.9.1"
+  }
+}
