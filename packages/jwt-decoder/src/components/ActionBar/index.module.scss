@@ -10,7 +10,9 @@
   margin: _.unit(6) 0;
 
   .examplesButton {
-    color: #fff;
+    &#{&} {
+      color: #fff;
+    }
 
     svg {
       margin-inline-start: _.unit(2);
