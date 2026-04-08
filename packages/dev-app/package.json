@@ -16,7 +16,7 @@
     "@logto/tools-components": "workspace:^",
     "@logto/tools-jwt-decoder": "workspace:^",
     "classnames": "^2.3.1",
-    "i18nova": "workspace:^",
+    "@logto/tools-i18nova": "workspace:^",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.30.2"

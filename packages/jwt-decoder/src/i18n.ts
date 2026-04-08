@@ -1,9 +1,12 @@
-import { fallbackLanguage, I18Nova, ReactI18Nova, type Language, type Resources } from 'i18nova';
+import {
+  fallbackLanguage,
+  I18Nova,
+  ReactI18Nova,
+  type Language,
+  type Resources,
+} from '@logto/tools-i18nova';
 
 import type decoderEn from './locales/en';
-
-export { fallbackLanguage, languages, languageTitles } from 'i18nova';
-export type { Language } from 'i18nova';
 
 export type LocalePhrase = {
   jwt_decoder: typeof decoderEn;
@@ -48,3 +51,5 @@ const { I18NovaProvider, useCurrentLanguage, useDirection, usePhrases } =
   ReactI18Nova.create(i18Nova);
 
 export { I18NovaProvider, useCurrentLanguage, useDirection, usePhrases };
+
+export { languages, fallbackLanguage, languageTitles, type Language } from '@logto/tools-i18nova';
