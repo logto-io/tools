@@ -1,9 +1,15 @@
-import { fallbackLanguage, I18Nova, ReactI18Nova, type Language, type Resources } from 'i18nova';
+import {
+  fallbackLanguage,
+  I18Nova,
+  ReactI18Nova,
+  type Language,
+  type Resources,
+} from '@logto/tools-i18nova';
 
 import type en from './locales/en';
 
-export { fallbackLanguage, languages, languageTitles } from 'i18nova';
-export type { Language } from 'i18nova';
+export { fallbackLanguage, languages, languageTitles } from '@logto/tools-i18nova';
+export type { Language } from '@logto/tools-i18nova';
 
 export type LocalePhrase = {
   dev_app: typeof en;

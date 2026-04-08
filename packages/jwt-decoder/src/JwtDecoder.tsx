@@ -1,7 +1,5 @@
-import { fallbackLanguage, findLanguage, ReactI18Nova } from 'i18nova';
-
 import Decoder from './Decoder';
-import { I18NovaProvider, type Language } from './i18n';
+import { fallbackLanguage, I18NovaProvider, type Language } from './i18n';
 
 type Props = {
   readonly currentLanguage?: Language;
@@ -9,8 +7,7 @@ type Props = {
 };
 
 const JwtDecoder = ({ currentLanguage, className }: Props) => {
-  const inheritedLanguage = ReactI18Nova.useGlobalCurrentLanguage();
-  const resolvedLanguage = currentLanguage ?? findLanguage(inheritedLanguage) ?? fallbackLanguage;
+  const resolvedLanguage = currentLanguage ?? fallbackLanguage;
 
   return (
     <I18NovaProvider currentLanguage={resolvedLanguage}>
