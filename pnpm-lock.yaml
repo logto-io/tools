@@ -39,60 +39,17 @@ importers:
         specifier: ^5.7.2
         version: 5.9.3
 
-  packages/components:
-    dependencies:
-      classnames:
-        specifier: ^2.3.1
-        version: 2.5.1
-      react:
-        specifier: ^18.0.0 || ^19.0.0
-        version: 18.3.1
-    devDependencies:
-      '@silverhand/eslint-config':
-        specifier: ^6.0.1
-        version: 6.0.1(eslint@8.57.1)(prettier@3.8.1)(typescript@5.9.3)
-      '@silverhand/eslint-config-react':
-        specifier: ^6.0.2
-        version: 6.0.2(eslint@8.57.1)(postcss@8.5.8)(prettier@3.8.1)(stylelint@15.11.0(typescript@5.9.3))(typescript@5.9.3)
-      '@silverhand/ts-config':
-        specifier: ^6.0.0
-        version: 6.0.0(typescript@5.9.3)
-      '@silverhand/ts-config-react':
-        specifier: ^6.0.0
-        version: 6.0.0(typescript@5.9.3)
-      '@types/react':
-        specifier: ^18.3.3
-        version: 18.3.28
-      '@types/react-dom':
-        specifier: ^18.3.0
-        version: 18.3.7(@types/react@18.3.28)
-      eslint:
-        specifier: ^8.56.0
-        version: 8.57.1
-      lint-staged:
-        specifier: ^16.0.0
-        version: 16.4.0
-      prettier:
-        specifier: ^3.0.0
-        version: 3.8.1
-      stylelint:
-        specifier: ^15.2.0
-        version: 15.11.0(typescript@5.9.3)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-
   packages/dev-app:
     dependencies:
-      '@logto/tools-components':
-        specifier: workspace:^
-        version: link:../components
       '@logto/tools-i18nova':
         specifier: workspace:^
         version: link:../i18nova
       '@logto/tools-jwt-decoder':
         specifier: workspace:^
         version: link:../jwt-decoder
+      '@logto/website-ui-foundation':
+        specifier: ^0.1.0-beta.0
+        version: 0.1.0-beta.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       classnames:
         specifier: ^2.3.1
         version: 2.5.1
@@ -194,11 +151,8 @@ importers:
 
   packages/jwt-decoder:
     dependencies:
-      '@logto/tools-components':
-        specifier: workspace:^
-        version: link:../components
       '@logto/tools-i18nova':
-        specifier: workspace:^
+        specifier: file:../i18nova
         version: link:../i18nova
       '@silverhand/essentials':
         specifier: ^2.9.1
@@ -212,6 +166,12 @@ importers:
       prismjs:
         specifier: ^1.30.0
         version: 1.30.0
+      react:
+        specifier: ^18.0.0 || ^19.0.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.0.0 || ^19.0.0
+        version: 18.3.1(react@18.3.1)
       react-hot-toast:
         specifier: ^2.4.0
         version: 2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -222,6 +182,9 @@ importers:
         specifier: ^10.0.4
         version: 10.1.1(react@18.3.1)
     devDependencies:
+      '@logto/website-ui-foundation':
+        specifier: ^0.1.0-beta.0
+        version: 0.1.0-beta.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@silverhand/eslint-config':
         specifier: ^6.0.1
         version: 6.0.1(eslint@8.57.1)(prettier@3.8.1)(typescript@5.9.3)
@@ -258,12 +221,6 @@ importers:
       prettier:
         specifier: ^3.0.0
         version: 3.8.1
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
       stylelint:
         specifier: ^15.2.0
         version: 15.11.0(typescript@5.9.3)
@@ -705,6 +662,13 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@logto/website-ui-foundation@0.1.0-beta.0':
+    resolution: {integrity: sha512-v6LZgoeoMrk53iz7RJfNTncIQoLh4izdo/STwh5aKRCmaRE16mx5Koh/6OzEPzwOfl1A4f35r4gjSfeP7dw3dQ==}
+    engines: {node: ^22.0.0}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
 
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
@@ -2048,6 +2012,9 @@ packages:
   eventemitter3@5.0.4:
     resolution: {integrity: sha512-mlsTRyGaPBjPedk6Bvw+aqbsXDtoAyAzm5MO7JgU+yVRyMQ5O8bD4Kcci7BS85f93veegeCPkL8R4GLClnjLFw==}
 
+  exenv@1.2.2:
+    resolution: {integrity: sha512-Z+ktTxTwv9ILfgKCk32OX3n/doe+OcLTRtqK9pcL+JsP3J1/VW8Uvl4ZjLlKqeW4rzK4oesDOGMEMRIZqtP4Iw==}
+
   expect-type@1.3.0:
     resolution: {integrity: sha512-knvyeauYhqjOYvQ66MznSMs83wmHrCycNEN6Ao+2AeYEfxUIkuiVxdEa1qlGEPK+We3n0THiDciYSsCcgW/DoA==}
     engines: {node: '>=12.0.0'}
@@ -3032,6 +2999,15 @@ packages:
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
+  react-lifecycles-compat@3.0.4:
+    resolution: {integrity: sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==}
+
+  react-modal@3.16.3:
+    resolution: {integrity: sha512-yCYRJB5YkeQDQlTt17WGAgFJ7jr2QYcWa1SHqZ3PluDmnKJ/7+tVU+E6uKyZ0nODaeEj+xCpK4LcSnKXLMC0Nw==}
+    peerDependencies:
+      react: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18 || ^19
+      react-dom: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18 || ^19
+
   react-router-dom@6.30.3:
     resolution: {integrity: sha512-pxPcv1AczD4vso7G4Z3TKcvlxK7g7TNt3/FNGMhfqyntocvYKj+GCatfigGDjbLozC4baguJ0ReCigoDJXb0ag==}
     engines: {node: '>=14.0.0'}
@@ -3785,6 +3761,9 @@ packages:
     resolution: {integrity: sha512-o8qghlI8NZHU1lLPrpi2+Uq7abh4GGPpYANlalzWxyWteJOCsr/P+oPBA49TOLu5FTZO4d3F9MnWJfiMo4BkmA==}
     engines: {node: '>=18'}
 
+  warning@4.0.3:
+    resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
+
   webidl-conversions@7.0.0:
     resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
     engines: {node: '>=12'}
@@ -4323,6 +4302,15 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@logto/website-ui-foundation@0.1.0-beta.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@silverhand/essentials': 2.9.3
+      classnames: 2.5.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-hot-toast: 2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-modal: 3.16.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
@@ -5791,6 +5779,8 @@ snapshots:
 
   eventemitter3@5.0.4: {}
 
+  exenv@1.2.2: {}
+
   expect-type@1.3.0: {}
 
   fast-deep-equal@3.1.3: {}
@@ -6738,6 +6728,17 @@ snapshots:
 
   react-is@17.0.2: {}
 
+  react-lifecycles-compat@3.0.4: {}
+
+  react-modal@3.16.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      exenv: 1.2.2
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-lifecycles-compat: 3.0.4
+      warning: 4.0.3
+
   react-router-dom@6.30.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@remix-run/router': 1.23.2
@@ -7618,6 +7619,10 @@ snapshots:
   w3c-xmlserializer@5.0.0:
     dependencies:
       xml-name-validator: 5.0.0
+
+  warning@4.0.3:
+    dependencies:
+      loose-envify: 1.4.0
 
   webidl-conversions@7.0.0: {}
 

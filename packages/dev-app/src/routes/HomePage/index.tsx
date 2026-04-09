@@ -1,3 +1,4 @@
+import { Button, Tag } from '@logto/website-ui-foundation';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +9,7 @@ import styles from './index.module.scss';
 
 const HomePage = () => {
   const { t } = usePhrases('dev_app');
+  const firstAvailableRoute = toolRoutes.find((route) => !('disabled' in route));
 
   return (
     <section className={styles.page}>
@@ -17,11 +19,16 @@ const HomePage = () => {
           <div>
             <h1 className={styles.title}>{t('home.title')}</h1>
             <p className={styles.description}>{t('home.description')}</p>
+            {firstAvailableRoute && (
+              <Button className={styles.heroButton} href={firstAvailableRoute.path} type="primary">
+                {t('home.open_tool')}
+              </Button>
+            )}
           </div>
           <div className={styles.tags}>
-            <span className={styles.tag}>{t('home.tags.topbar')}</span>
-            <span className={styles.tag}>{t('home.tags.routes')}</span>
-            <span className={styles.tag}>{t('home.tags.i18n')}</span>
+            <Tag className={styles.tag} text={t('home.tags.topbar')} />
+            <Tag className={styles.tag} text={t('home.tags.routes')} />
+            <Tag className={styles.tag} text={t('home.tags.i18n')} />
           </div>
         </div>
         <div className={styles.grid}>

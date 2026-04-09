@@ -1,4 +1,4 @@
-import { Button, Dropdown, DropdownItem } from '@logto/tools-components';
+import { Button, Dropdown, DropdownItem } from '@logto/website-ui-foundation';
 import { useState, useRef, useCallback } from 'react';
 
 import ArrowDown from '../../assets/arrow-down.svg?react';

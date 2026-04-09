@@ -1,5 +1,5 @@
-@use '@logto/tools-components/src/scss/underscore' as _;
-@use '@logto/tools-components/src/scss/media' as media;
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+@use '@logto/website-ui-foundation/scss/_media.scss' as media;
 
 .section {
   padding-bottom: _.unit(20);

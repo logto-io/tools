@@ -1,11 +1,17 @@
 import { JwtDecoder } from '@logto/tools-jwt-decoder';
 
+import { type Language } from '../i18n';
+
 import styles from './JwtDecoderPage.module.scss';
 
-const JwtDecoderPage = () => {
+type Props = {
+  readonly currentLanguage: Language;
+};
+
+const JwtDecoderPage = ({ currentLanguage }: Props) => {
   return (
     <div className={styles.page}>
-      <JwtDecoder className={styles.decoder} />
+      <JwtDecoder className={styles.decoder} currentLanguage={currentLanguage} />
     </div>
   );
 };

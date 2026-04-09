@@ -29,7 +29,6 @@ Engineering rules are aligned with website as much as possible:
 ```text
 tools/
   packages/
-    components/    # @logto/tools-components (shared UI + shared SCSS tokens/utilities)
     i18nova/       # shared i18n runtime + language definitions + React bindings
     jwt-decoder/   # tool package (library)
     dev-app/       # local host app for development and integration validation
@@ -38,7 +37,7 @@ tools/
 Design principles:
 
 - Keep tools self-contained but integration-ready.
-- Move reusable UI/styling to `tools-components`.
+- Use shared UI/styling from `@logto/website-ui-foundation`.
 - Use shared `i18nova` language/runtime across all tools.
 - Treat `dev-app` as the reference host app.
 
@@ -100,8 +99,8 @@ Use this flow for any new tool (for example `saml-decoder`).
 - Avoid hardcoded user-facing strings in component code.
 
 4. Reuse shared UI
-- Use `@logto/tools-components`.
-- Extract cross-tool styles/components into `packages/components`.
+- Use `@logto/website-ui-foundation`.
+- Keep tool-specific composition local to each tool package.
 - Keep tool business logic inside the tool package.
 
 5. Integrate in `dev-app`

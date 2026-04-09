@@ -17,7 +17,10 @@ const App = () => {
         <AppShell currentLanguage={currentLanguage} onLanguageChange={setCurrentLanguage}>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/jwt-decoder" element={<JwtDecoderPage />} />
+            <Route
+              path="/jwt-decoder"
+              element={<JwtDecoderPage currentLanguage={currentLanguage} />}
+            />
             <Route path="/saml-decoder" element={<Placeholder />} />
             <Route path="/base64-decoder" element={<Placeholder />} />
           </Routes>

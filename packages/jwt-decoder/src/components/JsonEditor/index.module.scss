@@ -1,6 +1,6 @@
-@use '@logto/tools-components/src/scss/underscore' as _;
-@use '@logto/tools-components/src/scss/media' as media;
-@use '@logto/tools-components/src/scss/tool-surface' as surface;
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+@use '@logto/website-ui-foundation/scss/_media.scss' as media;
+@use '../../scss/editor' as editor;
 
 .editorPanel {
   &:first-child {
@@ -9,7 +9,7 @@
 }
 
 .jsonEditor {
-  @include surface.code-editor-base;
+  @include editor.code-editor-base;
   background: #141420;
 
   &.readOnly {
@@ -36,7 +36,7 @@
 }
 
 .editorTitle {
-  @include surface.editor-title;
+  @include editor.editor-title;
 }
 
 :global {

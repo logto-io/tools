@@ -1,4 +1,4 @@
-@use './underscore' as _;
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
 
 @mixin editor-title {
   color: #fff;
