@@ -9,11 +9,11 @@
   justify-content: flex-end;
   margin: _.unit(6) 0;
 
-  .examplesButton {
-    &#{&} {
-      color: #fff;
-    }
+  .examplesButton.examplesButton {
+    color: #fff;
+  }
 
+  .examplesButton {
     svg {
       margin-inline-start: _.unit(2);
     }
