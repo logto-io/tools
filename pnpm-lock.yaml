@@ -152,7 +152,7 @@ importers:
   packages/jwt-decoder:
     dependencies:
       '@logto/tools-i18nova':
-        specifier: file:../i18nova
+        specifier: workspace:^
         version: link:../i18nova
       '@silverhand/essentials':
         specifier: ^2.9.1
