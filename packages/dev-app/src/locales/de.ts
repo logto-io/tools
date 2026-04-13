@@ -1,3 +1,5 @@
+import type en from './en';
+
 const de = {
   topbar: {
     banner_text: 'Erstelle und prüfe öffentliche Tools in einer websitegleichen Dev-App.',
@@ -41,4 +43,4 @@ const de = {
   },
 };
 
-export default de;
+export default de satisfies typeof en;

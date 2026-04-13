@@ -10,7 +10,7 @@ import { isValidJwtHeader } from '../utils';
 import JsonEditor from './JsonEditor';
 
 const HeaderEditor = () => {
-  const { t } = usePhrases('jwt_decoder');
+  const { t } = usePhrases();
   const { decodedHeader, setDecodedHeader, mode } = useContext(JwtContext);
   const { rawHeader, setRawHeader } = useContext(HeaderPayloadEditorContext);
 

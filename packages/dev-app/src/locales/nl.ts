@@ -1,3 +1,5 @@
+import type en from './en';
+
 const nl = {
   topbar: {
     banner_text: 'Bouw en bekijk publieke tools in een dev-app die overeenkomt met de website.',
@@ -41,4 +43,4 @@ const nl = {
   },
 };
 
-export default nl;
+export default nl satisfies typeof en;

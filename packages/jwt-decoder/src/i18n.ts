@@ -1,55 +1,58 @@
 import {
-  fallbackLanguage,
-  I18Nova,
-  ReactI18Nova,
+  createToolI18nBridge,
   type Language,
-  type Resources,
+  type StrictResources,
+  type ToolI18nBridge,
+  withNamespace,
 } from '@logto/tools-i18nova';
 
 import type decoderEn from './locales/en';
 
-export type LocalePhrase = {
-  jwt_decoder: typeof decoderEn;
+export const jwtDecoderNamespace = 'jwt_decoder';
+
+export type JwtDecoderPhrases = typeof decoderEn;
+
+export type JwtDecoderLocalePhrase = {
+  jwt_decoder: JwtDecoderPhrases;
 };
 
-const wrapLocale = async (loader: () => Promise<{ default: typeof decoderEn }>) => {
-  const module = await loader();
+export type JwtDecoderI18nAdapter = ToolI18nBridge<JwtDecoderPhrases>;
+
+export const jwtDecoderResources: StrictResources<Language, JwtDecoderLocalePhrase> = {
+  ar: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/ar')),
+  de: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/de')),
+  en: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/en')),
+  es: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/es')),
+  fi: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/fi')),
+  fr: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/fr')),
+  it: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/it')),
+  ja: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/ja')),
+  ko: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/ko')),
+  nl: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/nl')),
+  'pl-PL': async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/pl-pl')),
+  'pt-BR': async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/pt-br')),
+  'pt-PT': async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/pt-pt')),
+  ru: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/ru')),
+  sv: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/sv')),
+  th: async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/th')),
+  'tr-TR': async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/tr-tr')),
+  'zh-CN': async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/zh-cn')),
+  'zh-HK': async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/zh-hk')),
+  'zh-TW': async () => withNamespace(jwtDecoderNamespace, async () => import('./locales/zh-tw')),
+};
+
+const { ToolI18nProvider: I18nProvider, useToolI18n } = createToolI18nBridge<JwtDecoderPhrases>();
+
+export const usePhrases = () => {
+  const { t, getObject } = useToolI18n();
 
   return {
-    default: {
-      jwt_decoder: module.default,
-    },
+    t,
+    translate: t,
+    getObject,
   };
 };
 
-const resources: Resources<Language, LocalePhrase> = {
-  ar: async () => wrapLocale(async () => import('./locales/ar')),
-  de: async () => wrapLocale(async () => import('./locales/de')),
-  en: async () => wrapLocale(async () => import('./locales/en')),
-  es: async () => wrapLocale(async () => import('./locales/es')),
-  fi: async () => wrapLocale(async () => import('./locales/fi')),
-  fr: async () => wrapLocale(async () => import('./locales/fr')),
-  it: async () => wrapLocale(async () => import('./locales/it')),
-  ja: async () => wrapLocale(async () => import('./locales/ja')),
-  ko: async () => wrapLocale(async () => import('./locales/ko')),
-  nl: async () => wrapLocale(async () => import('./locales/nl')),
-  'pl-PL': async () => wrapLocale(async () => import('./locales/pl-pl')),
-  'pt-BR': async () => wrapLocale(async () => import('./locales/pt-br')),
-  'pt-PT': async () => wrapLocale(async () => import('./locales/pt-pt')),
-  ru: async () => wrapLocale(async () => import('./locales/ru')),
-  sv: async () => wrapLocale(async () => import('./locales/sv')),
-  th: async () => wrapLocale(async () => import('./locales/th')),
-  'tr-TR': async () => wrapLocale(async () => import('./locales/tr-tr')),
-  'zh-CN': async () => wrapLocale(async () => import('./locales/zh-cn')),
-  'zh-HK': async () => wrapLocale(async () => import('./locales/zh-hk')),
-  'zh-TW': async () => wrapLocale(async () => import('./locales/zh-tw')),
-};
+export { I18nProvider };
 
-export const i18Nova = new I18Nova(resources, fallbackLanguage);
-
-const { I18NovaProvider, useCurrentLanguage, useDirection, usePhrases } =
-  ReactI18Nova.create(i18Nova);
-
-export { I18NovaProvider, useCurrentLanguage, useDirection, usePhrases };
-
-export { languages, fallbackLanguage, languageTitles, type Language } from '@logto/tools-i18nova';
+export { fallbackLanguage, languageTitles, languages, type Language } from '@logto/tools-i18nova';

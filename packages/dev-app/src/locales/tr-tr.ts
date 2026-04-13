@@ -1,3 +1,5 @@
+import type en from './en';
+
 const trTR = {
   topbar: {
     banner_text:
@@ -42,4 +44,4 @@ const trTR = {
   },
 };
 
-export default trTR;
+export default trTR satisfies typeof en;

@@ -9,6 +9,11 @@ export type Resources<Languages extends string, Phrases extends BasePhrases> = R
   MayBeImport<DeepPartial<Phrases>>
 >;
 
+export type StrictResources<Languages extends string, Phrases extends BasePhrases> = Record<
+  Languages,
+  MayBeImport<Phrases>
+>;
+
 type PhrasesKeyOfRecord<T extends Record<string, unknown>, Prefix extends string> = {
   [K in keyof T]: K extends string
     ? T[K] extends Record<string, unknown>
@@ -43,12 +48,3 @@ export type PhrasesKeyType<
     : never;
 
 export type TranslateParams = Record<string, string | number>;
-
-export type AvailablePrefixes<T extends string> = T extends `${infer Prefix}.${infer Rest}`
-  ? Prefix | `${Prefix}.${AvailablePrefixes<Rest>}`
-  : never;
-
-export type StripPrefix<
-  T extends string,
-  Prefix extends string,
-> = T extends `${Prefix}.${infer Rest}` ? Rest : T;

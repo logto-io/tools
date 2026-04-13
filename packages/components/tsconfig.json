@@ -1,8 +1,0 @@
-{
-  "extends": "@silverhand/ts-config-react/tsconfig.base",
-  "compilerOptions": {
-    "moduleResolution": "bundler",
-    "noEmit": true
-  },
-  "include": ["src"]
-}

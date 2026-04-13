@@ -1,3 +1,5 @@
+import type en from './en';
+
 const th = {
   topbar: {
     banner_text: 'สร้างและพรีวิวเครื่องมือสาธารณะในแอปพัฒนาที่สอดคล้องกับเว็บไซต์',
@@ -40,4 +42,4 @@ const th = {
   },
 };
 
-export default th;
+export default th satisfies typeof en;

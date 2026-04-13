@@ -1,3 +1,5 @@
+import type en from '../en';
+
 const jwt_decoder = {
   title:
     'JWT декодер и кодировщик (JWT decoder & encoder) | Безопасный, простой и удобный для пользователя',
@@ -241,4 +243,4 @@ const jwt_decoder = {
     'Упростите свои рабочие процессы и обеспечьте управление пользователями с помощью Logto Cloud. Основанное на OpenID Connect (OIDC), оно использует JWT для предоставления надежной системы аутентификации и авторизации, разработанной для масштабирования в соответствии с вашими потребностями.',
 };
 
-export default Object.freeze(jwt_decoder);
+export default Object.freeze(jwt_decoder) satisfies typeof en;

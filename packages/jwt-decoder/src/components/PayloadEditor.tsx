@@ -9,7 +9,7 @@ import { EditorMode } from '../types';
 import JsonEditor from './JsonEditor';
 
 const PayloadEditor = () => {
-  const { t } = usePhrases('jwt_decoder');
+  const { t } = usePhrases();
   const { decodedPayload, setDecodedPayload, mode } = useContext(JwtContext);
   const { rawPayload, setRawPayload } = useContext(HeaderPayloadEditorContext);
 

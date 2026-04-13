@@ -29,7 +29,6 @@ Engineering rules are aligned with website as much as possible:
 ```text
 tools/
   packages/
-    components/    # @logto/tools-components (shared UI + shared SCSS tokens/utilities)
     i18nova/       # shared i18n runtime + language definitions + React bindings
     jwt-decoder/   # tool package (library)
     dev-app/       # local host app for development and integration validation
@@ -38,16 +37,17 @@ tools/
 Design principles:
 
 - Keep tools self-contained but integration-ready.
-- Move reusable UI/styling to `tools-components`.
+- Use shared UI/styling from `@logto/website-ui-foundation`.
 - Use shared `i18nova` language/runtime across all tools.
 - Treat `dev-app` as the reference host app.
 
 ### i18n model
 
-- Host app provides upper `I18NovaProvider`.
-- Tool components prefer inherited language from shared context.
-- `currentLanguage` prop is supported as optional override.
-- Fallback language is used only if neither is provided.
+- Host app provides the real upper `I18NovaProvider` and owns language state.
+- Tool package exports its own locale resources (for example `jwtDecoderResources`) as SSOT.
+- Host app loads/merges tool resources into its i18n store.
+- Host app passes resolved i18n methods (`t`, `getObject`, `currentLanguage`, `direction`) to tool root.
+- Tool internals consume those methods through a shared tool bridge context from `@logto/tools-i18nova`.
 
 This mirrors the website integration pattern.
 
@@ -92,16 +92,17 @@ Use this flow for any new tool (for example `saml-decoder`).
 2. Define public API
 - Export top-level component from `src/index.ts`.
 - Support optional `className`.
-- Support host-first i18n behavior (inherited context, optional explicit language override).
+- Define a tool i18n bridge prop (`i18n`) and keep provider ownership in the host app.
 
 3. Add i18n
 - Add locale files under `src/locales`.
-- Use shared language list/types from `i18nova`.
+- Export tool namespace/resources from the tool package.
+- Use shared language list/types and bridge helpers from `@logto/tools-i18nova`.
 - Avoid hardcoded user-facing strings in component code.
 
 4. Reuse shared UI
-- Use `@logto/tools-components`.
-- Extract cross-tool styles/components into `packages/components`.
+- Use `@logto/website-ui-foundation`.
+- Keep tool-specific composition local to each tool package.
 - Keep tool business logic inside the tool package.
 
 5. Integrate in `dev-app`
@@ -118,7 +119,7 @@ Use this flow for any new tool (for example `saml-decoder`).
 
 When attaching a tool to website pages:
 
-1. Mount the tool under website i18n provider.
-2. Prefer inherited language (no extra prop).
-3. Use explicit `currentLanguage` only when forced-language behavior is required.
+1. Keep website i18n provider as the only top-level source of language state.
+2. Load tool resources into website i18n by locale.
+3. Build tool `i18n` bridge from website i18n hooks and pass it to the tool root component.
 4. Keep page-level layout/background in host page; tools expose `className` for adaptation.

@@ -1,3 +1,5 @@
+import type en from './en';
+
 const ja = {
   topbar: {
     banner_text: 'サイトと同じ構成の開発アプリで公開ツールを作成・プレビューします。',
@@ -40,4 +42,4 @@ const ja = {
   },
 };
 
-export default ja;
+export default ja satisfies typeof en;

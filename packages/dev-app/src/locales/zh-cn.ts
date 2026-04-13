@@ -1,3 +1,5 @@
+import type en from './en';
+
 const zhCN = {
   topbar: {
     banner_text: '在与官网一致的开发应用中构建和预览公开工具。',
@@ -40,4 +42,4 @@ const zhCN = {
   },
 };
 
-export default zhCN;
+export default zhCN satisfies typeof en;

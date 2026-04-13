@@ -1,18 +1,16 @@
 import Decoder from './Decoder';
-import { fallbackLanguage, I18NovaProvider, type Language } from './i18n';
+import { I18nProvider, type JwtDecoderI18nAdapter } from './i18n';
 
 type Props = {
-  readonly currentLanguage?: Language;
+  readonly i18n: JwtDecoderI18nAdapter;
   readonly className?: string;
 };
 
-const JwtDecoder = ({ currentLanguage, className }: Props) => {
-  const resolvedLanguage = currentLanguage ?? fallbackLanguage;
-
+const JwtDecoder = ({ i18n, className }: Props) => {
   return (
-    <I18NovaProvider currentLanguage={resolvedLanguage}>
+    <I18nProvider i18n={i18n}>
       <Decoder className={className} />
-    </I18NovaProvider>
+    </I18nProvider>
   );
 };
 

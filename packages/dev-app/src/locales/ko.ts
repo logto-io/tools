@@ -1,3 +1,5 @@
+import type en from './en';
+
 const ko = {
   topbar: {
     banner_text: '웹사이트와 동일한 개발 앱에서 공개 도구를 빌드하고 미리보기합니다.',
@@ -40,4 +42,4 @@ const ko = {
   },
 };
 
-export default ko;
+export default ko satisfies typeof en;

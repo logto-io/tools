@@ -25,7 +25,7 @@ const getSecretByAlgorithm = (algorithm: Algorithm): Secrets => {
 };
 
 const useActions = () => {
-  const { t } = usePhrases('jwt_decoder');
+  const { t } = usePhrases();
   const { mode, jwt, setJwt, setSecretData } = useContext(JwtContext);
   const { setRawHeader, setRawPayload } = useContext(HeaderPayloadEditorContext);
 

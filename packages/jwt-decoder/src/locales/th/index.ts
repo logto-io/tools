@@ -1,3 +1,5 @@
+import type en from '../en';
+
 const jwt_decoder = {
   title: 'เครื่องถอดรหัสและเข้ารหัส JWT (JWT decoder & encoder) | ปลอดภัย ง่ายดาย และใช้งานง่าย',
   description:
@@ -236,4 +238,4 @@ const jwt_decoder = {
     'ทำให้กระบวนการทำงานของคุณง่ายขึ้นและทำให้การจัดการผู้ใช้ปลอดภัยด้วย Logto Cloud ที่สร้างขึ้นบน OpenID Connect (OIDC) ซึ่งใช้ JWT เพื่อส่งมอบระบบการตรวจสอบสิทธิ์และการอนุญาตที่เชื่อถือได้ซึ่งออกแบบมาเพื่อขยายตามความต้องการของคุณ',
 };
 
-export default Object.freeze(jwt_decoder);
+export default Object.freeze(jwt_decoder) satisfies typeof en;

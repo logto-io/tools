@@ -1,4 +1,4 @@
-import { Button, Dropdown, DropdownItem } from '@logto/tools-components';
+import { Button, Dropdown, DropdownItem } from '@logto/website-ui-foundation';
 import { useState, useRef, useCallback } from 'react';
 
 import ArrowDown from '../../assets/arrow-down.svg?react';
@@ -9,7 +9,7 @@ import styles from './index.module.scss';
 import useActions from './use-actions';
 
 const ActionBar = () => {
-  const { t } = usePhrases('jwt_decoder');
+  const { t } = usePhrases();
   const [showDropdown, setShowDropdown] = useState(false);
   const examplesButtonRef = useRef(null);
   const { setJwtExample, onShareUrl } = useActions();

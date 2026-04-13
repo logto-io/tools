@@ -1,6 +1,6 @@
-@use '@logto/tools-components/src/scss/underscore' as _;
-@use '@logto/tools-components/src/scss/media' as media;
-@use '@logto/tools-components/src/scss/tool-surface' as surface;
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+@use '@logto/website-ui-foundation/scss/_media.scss' as media;
+@use '../../scss/editor' as editor;
 
 .secretForm {
   width: 100%;
@@ -14,12 +14,12 @@
 }
 
 .editorTitle {
-  @include surface.editor-title;
+  @include editor.editor-title;
 }
 
 .jwksUrlInput,
 .secretEditor {
-  @include surface.code-editor-base;
+  @include editor.code-editor-base;
   padding: _.unit(6);
   background: none;
 }
