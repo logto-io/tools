@@ -1,3 +1,5 @@
+import type en from './en';
+
 const ar = {
   topbar: {
     banner_text: 'قم ببناء ومعاينة الأدوات العامة داخل تطبيق تطوير مطابق للموقع.',
@@ -40,4 +42,4 @@ const ar = {
   },
 };
 
-export default ar;
+export default ar satisfies typeof en;

@@ -19,7 +19,7 @@ import useDecodeJwtListener from './use-decode-jwt-listener';
 import useEncodeJwtListener from './use-encode-jwt-listener';
 
 const JwtEditor = () => {
-  const { t, getObject } = usePhrases('jwt_decoder');
+  const { t, getObject } = usePhrases();
   const { jwt, isJwtVerified, setJwt, mode } = useContext(JwtContext);
   const readOnly = mode === EditorMode.Encode;
   const isJwtUnverified = isJwtVerified === false;
@@ -43,9 +43,9 @@ const JwtEditor = () => {
       return t('jwt_editor_placeholder');
     }
 
-    return `{{${getObject('instruction.jwt_structure.bullets')
-      ?.map(({ label }: { label: string }) => label.toLocaleLowerCase())
-      .join('}}.{{')}}}`;
+    const bullets = getObject('instruction.jwt_structure.bullets');
+
+    return `{{${bullets?.map(({ label }) => label.toLocaleLowerCase()).join('}}.{{')}}}`;
   }, [mode, getObject, t]);
 
   return (

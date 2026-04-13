@@ -15,13 +15,19 @@ import {
   type PhrasesKey,
   type BasePhrases,
   type TranslateParams,
-  type StripPrefix,
-  type AvailablePrefixes,
   type PhrasesObjectKey,
   type PhrasesKeyType,
 } from '../types';
 
 export * from './Trans';
+
+type AvailablePrefixes<T extends string> = T extends `${infer Prefix}.${infer Rest}`
+  ? Prefix | `${Prefix}.${AvailablePrefixes<Rest>}`
+  : never;
+
+type StripPrefix<T extends string, Prefix extends string> = T extends `${Prefix}.${infer Rest}`
+  ? Rest
+  : T;
 
 type I18NovaContextType<Language extends string, Phrases extends BasePhrases> = {
   i18Nova: I18Nova<Language, Phrases>;

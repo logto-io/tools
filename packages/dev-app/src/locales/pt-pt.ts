@@ -1,3 +1,5 @@
+import type en from './en';
+
 const ptPT = {
   topbar: {
     banner_text:
@@ -42,4 +44,4 @@ const ptPT = {
   },
 };
 
-export default ptPT;
+export default ptPT satisfies typeof en;

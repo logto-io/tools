@@ -1,3 +1,5 @@
+import type en from './en';
+
 const es = {
   topbar: {
     banner_text:
@@ -42,4 +44,4 @@ const es = {
   },
 };
 
-export default es;
+export default es satisfies typeof en;

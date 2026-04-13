@@ -1,3 +1,5 @@
+import type en from '../en';
+
 const jwt_decoder = {
   title: 'JWT 解碼器 & 編碼器 (JWT decoder & encoder) | 安全、簡單且用戶友好',
   description:
@@ -225,4 +227,4 @@ const jwt_decoder = {
     '使用 Logto Cloud 簡化你的工作流程，確保用戶管理的安全。其建立在 OpenID Connect (OIDC) 之上，利用 JWT 提供一個可靠且可擴展的身份驗證和授權系統，旨在滿足你的需求。',
 };
 
-export default Object.freeze(jwt_decoder);
+export default Object.freeze(jwt_decoder) satisfies typeof en;

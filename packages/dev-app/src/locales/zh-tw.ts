@@ -1,3 +1,5 @@
+import type en from './en';
+
 const zhTW = {
   topbar: {
     banner_text: '在與網站一致的開發應用中建立並預覽公開工具。',
@@ -40,4 +42,4 @@ const zhTW = {
   },
 };
 
-export default zhTW;
+export default zhTW satisfies typeof en;

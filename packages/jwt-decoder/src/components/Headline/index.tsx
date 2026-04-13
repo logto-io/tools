@@ -8,7 +8,7 @@ import styles from './index.module.scss';
 
 const Headline = () => {
   const { mode, setMode } = useContext(JwtContext);
-  const { t } = usePhrases('jwt_decoder');
+  const { t } = usePhrases();
   const modeLabel = mode === EditorMode.Decode ? t('decoder') : t('encoder');
   const switchLabel = mode === EditorMode.Decode ? t('encoder') : t('decoder');
 

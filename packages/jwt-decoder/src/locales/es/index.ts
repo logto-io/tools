@@ -1,3 +1,5 @@
+import type en from '../en';
+
 const jwt_decoder = {
   title: 'Decodificador y codificador de JWT | Seguro, simple y fácil de usar',
   description:
@@ -242,4 +244,4 @@ const jwt_decoder = {
     'Simplifica tu flujo de trabajo y asegura la gestión de usuarios con Logto Cloud. Construido sobre OpenID Connect (OIDC), se apoya en JWT para ofrecer un sistema de autenticación y autorización confiable diseñado para escalar según tus necesidades.',
 };
 
-export default Object.freeze(jwt_decoder);
+export default Object.freeze(jwt_decoder) satisfies typeof en;

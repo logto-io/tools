@@ -1,3 +1,5 @@
+import type en from './en';
+
 const plPL = {
   topbar: {
     banner_text: 'Twórz i testuj publiczne narzędzia w aplikacji deweloperskiej zgodnej z witryną.',
@@ -41,4 +43,4 @@ const plPL = {
   },
 };
 
-export default plPL;
+export default plPL satisfies typeof en;

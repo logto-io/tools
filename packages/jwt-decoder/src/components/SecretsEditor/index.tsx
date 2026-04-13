@@ -17,7 +17,7 @@ const buildKeyPlaceholder = (
 `;
 
 const SecretsEditor = () => {
-  const { t } = usePhrases('jwt_decoder');
+  const { t } = usePhrases();
   const { mode, showJwksUrl, currentSecret, toggleShowJwksUrl, updateSecret } = useSecrets();
 
   // Render the HMAC secret editor

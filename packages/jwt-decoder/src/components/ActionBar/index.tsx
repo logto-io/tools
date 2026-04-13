@@ -9,7 +9,7 @@ import styles from './index.module.scss';
 import useActions from './use-actions';
 
 const ActionBar = () => {
-  const { t } = usePhrases('jwt_decoder');
+  const { t } = usePhrases();
   const [showDropdown, setShowDropdown] = useState(false);
   const examplesButtonRef = useRef(null);
   const { setJwtExample, onShareUrl } = useActions();

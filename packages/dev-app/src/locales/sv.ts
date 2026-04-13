@@ -1,3 +1,5 @@
+import type en from './en';
+
 const sv = {
   topbar: {
     banner_text:
@@ -42,4 +44,4 @@ const sv = {
   },
 };
 
-export default sv;
+export default sv satisfies typeof en;

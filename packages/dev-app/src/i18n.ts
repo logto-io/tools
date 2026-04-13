@@ -2,9 +2,12 @@ import {
   fallbackLanguage,
   I18Nova,
   ReactI18Nova,
+  resolveMayBeImport,
   type Language,
-  type Resources,
+  type StrictResources,
+  withNamespace,
 } from '@logto/tools-i18nova';
+import { jwtDecoderResources, type JwtDecoderLocalePhrase } from '@logto/tools-jwt-decoder';
 
 import type en from './locales/en';
 
@@ -13,39 +16,46 @@ export type { Language } from '@logto/tools-i18nova';
 
 export type LocalePhrase = {
   dev_app: typeof en;
-};
+} & JwtDecoderLocalePhrase;
 
-const wrapLocale = async (loader: () => Promise<{ default: typeof en }>) => {
-  const module = await loader();
+const mergeLocale = async (
+  language: Language,
+  loader: () => Promise<{ default: typeof en }>
+): Promise<{ default: LocalePhrase }> => {
+  const [devAppLocale, jwtDecoderLocale] = await Promise.all([
+    withNamespace('dev_app', loader),
+    resolveMayBeImport(jwtDecoderResources[language]),
+  ]);
 
   return {
     default: {
-      dev_app: module.default,
+      ...devAppLocale.default,
+      ...jwtDecoderLocale.default,
     },
   };
 };
 
-const resources: Resources<Language, LocalePhrase> = {
-  ar: async () => wrapLocale(async () => import('./locales/ar')),
-  de: async () => wrapLocale(async () => import('./locales/de')),
-  en: async () => wrapLocale(async () => import('./locales/en')),
-  es: async () => wrapLocale(async () => import('./locales/es')),
-  fi: async () => wrapLocale(async () => import('./locales/fi')),
-  fr: async () => wrapLocale(async () => import('./locales/fr')),
-  it: async () => wrapLocale(async () => import('./locales/it')),
-  ja: async () => wrapLocale(async () => import('./locales/ja')),
-  ko: async () => wrapLocale(async () => import('./locales/ko')),
-  nl: async () => wrapLocale(async () => import('./locales/nl')),
-  'pl-PL': async () => wrapLocale(async () => import('./locales/pl-pl')),
-  'pt-BR': async () => wrapLocale(async () => import('./locales/pt-br')),
-  'pt-PT': async () => wrapLocale(async () => import('./locales/pt-pt')),
-  ru: async () => wrapLocale(async () => import('./locales/ru')),
-  sv: async () => wrapLocale(async () => import('./locales/sv')),
-  th: async () => wrapLocale(async () => import('./locales/th')),
-  'tr-TR': async () => wrapLocale(async () => import('./locales/tr-tr')),
-  'zh-CN': async () => wrapLocale(async () => import('./locales/zh-cn')),
-  'zh-HK': async () => wrapLocale(async () => import('./locales/zh-hk')),
-  'zh-TW': async () => wrapLocale(async () => import('./locales/zh-tw')),
+const resources: StrictResources<Language, LocalePhrase> = {
+  ar: async () => mergeLocale('ar', async () => import('./locales/ar')),
+  de: async () => mergeLocale('de', async () => import('./locales/de')),
+  en: async () => mergeLocale('en', async () => import('./locales/en')),
+  es: async () => mergeLocale('es', async () => import('./locales/es')),
+  fi: async () => mergeLocale('fi', async () => import('./locales/fi')),
+  fr: async () => mergeLocale('fr', async () => import('./locales/fr')),
+  it: async () => mergeLocale('it', async () => import('./locales/it')),
+  ja: async () => mergeLocale('ja', async () => import('./locales/ja')),
+  ko: async () => mergeLocale('ko', async () => import('./locales/ko')),
+  nl: async () => mergeLocale('nl', async () => import('./locales/nl')),
+  'pl-PL': async () => mergeLocale('pl-PL', async () => import('./locales/pl-pl')),
+  'pt-BR': async () => mergeLocale('pt-BR', async () => import('./locales/pt-br')),
+  'pt-PT': async () => mergeLocale('pt-PT', async () => import('./locales/pt-pt')),
+  ru: async () => mergeLocale('ru', async () => import('./locales/ru')),
+  sv: async () => mergeLocale('sv', async () => import('./locales/sv')),
+  th: async () => mergeLocale('th', async () => import('./locales/th')),
+  'tr-TR': async () => mergeLocale('tr-TR', async () => import('./locales/tr-tr')),
+  'zh-CN': async () => mergeLocale('zh-CN', async () => import('./locales/zh-cn')),
+  'zh-HK': async () => mergeLocale('zh-HK', async () => import('./locales/zh-hk')),
+  'zh-TW': async () => mergeLocale('zh-TW', async () => import('./locales/zh-tw')),
 };
 
 export const i18Nova = new I18Nova(resources, fallbackLanguage);
