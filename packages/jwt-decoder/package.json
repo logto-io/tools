@@ -30,12 +30,12 @@
     "use-debounce": "^10.0.4"
   },
   "peerDependencies": {
-    "@logto/website-ui-foundation": "^0.1.0-beta.0",
+    "@logto/website-ui-foundation": "^0.2.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@logto/website-ui-foundation": "^0.1.0-beta.0",
+    "@logto/website-ui-foundation": "^0.2.0",
     "@silverhand/eslint-config": "^6.0.1",
     "@silverhand/eslint-config-react": "^6.0.2",
     "@silverhand/ts-config": "^6.0.0",

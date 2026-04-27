@@ -48,8 +48,8 @@ importers:
         specifier: workspace:^
         version: link:../jwt-decoder
       '@logto/website-ui-foundation':
-        specifier: ^0.1.0-beta.0
-        version: 0.1.0-beta.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^0.2.0
+        version: 0.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       classnames:
         specifier: ^2.3.1
         version: 2.5.1
@@ -183,8 +183,8 @@ importers:
         version: 10.1.1(react@18.3.1)
     devDependencies:
       '@logto/website-ui-foundation':
-        specifier: ^0.1.0-beta.0
-        version: 0.1.0-beta.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^0.2.0
+        version: 0.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@silverhand/eslint-config':
         specifier: ^6.0.1
         version: 6.0.1(eslint@8.57.1)(prettier@3.8.1)(typescript@5.9.3)
@@ -663,8 +663,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@logto/website-ui-foundation@0.1.0-beta.0':
-    resolution: {integrity: sha512-v6LZgoeoMrk53iz7RJfNTncIQoLh4izdo/STwh5aKRCmaRE16mx5Koh/6OzEPzwOfl1A4f35r4gjSfeP7dw3dQ==}
+  '@logto/website-ui-foundation@0.2.0':
+    resolution: {integrity: sha512-XBrh1z8JYdudByIQCOLfnxliFF3SblOGAJzG3HJ42Jn8mtqYlSAfeinjlzZmQBUmWnSMcrsYUXVH1dLUoXObjA==}
     engines: {node: ^22.0.0}
     peerDependencies:
       react: ^18.3.1
@@ -4303,7 +4303,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@logto/website-ui-foundation@0.1.0-beta.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@logto/website-ui-foundation@0.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@silverhand/essentials': 2.9.3
       classnames: 2.5.1
