@@ -15,6 +15,7 @@
   "dependencies": {
     "@logto/website-ui-foundation": "^0.1.0-beta.0",
     "@logto/tools-base64-decoder": "workspace:^",
+    "@logto/website-ui-foundation": "^0.2.0",
     "@logto/tools-jwt-decoder": "workspace:^",
     "classnames": "^2.3.1",
     "@logto/tools-i18nova": "workspace:^",
