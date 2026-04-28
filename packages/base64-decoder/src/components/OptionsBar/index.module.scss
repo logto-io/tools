@@ -1,0 +1,40 @@
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+@use '@logto/website-ui-foundation/scss/_media.scss' as media;
+
+.optionsBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: _.unit(6);
+  color: #fff;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: _.unit(2);
+  cursor: pointer;
+
+  input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+    accent-color: #7958ff;
+    cursor: pointer;
+  }
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.hint {
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff80;
+
+  @include media.mobile {
+    display: none;
+  }
+}

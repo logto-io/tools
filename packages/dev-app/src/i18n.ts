@@ -1,4 +1,8 @@
 import {
+  base64DecoderResources,
+  type Base64DecoderLocalePhrase,
+} from '@logto/tools-base64-decoder';
+import {
   fallbackLanguage,
   I18Nova,
   ReactI18Nova,
@@ -16,21 +20,24 @@ export type { Language } from '@logto/tools-i18nova';
 
 export type LocalePhrase = {
   dev_app: typeof en;
-} & JwtDecoderLocalePhrase;
+} & JwtDecoderLocalePhrase &
+  Base64DecoderLocalePhrase;
 
 const mergeLocale = async (
   language: Language,
   loader: () => Promise<{ default: typeof en }>
 ): Promise<{ default: LocalePhrase }> => {
-  const [devAppLocale, jwtDecoderLocale] = await Promise.all([
+  const [devAppLocale, jwtDecoderLocale, base64DecoderLocale] = await Promise.all([
     withNamespace('dev_app', loader),
     resolveMayBeImport(jwtDecoderResources[language]),
+    resolveMayBeImport(base64DecoderResources[language]),
   ]);
 
   return {
     default: {
       ...devAppLocale.default,
       ...jwtDecoderLocale.default,
+      ...base64DecoderLocale.default,
     },
   };
 };

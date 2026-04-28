@@ -1,0 +1,46 @@
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+@use '../../scss/editor' as editor;
+
+.pane {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  &:first-child {
+    margin-bottom: _.unit(6);
+  }
+}
+
+.title {
+  @include editor.editor-title;
+}
+
+.textarea {
+  @include editor.code-editor-base;
+  background: #141420;
+  padding: _.unit(6);
+  resize: vertical;
+  min-height: _.unit(60);
+  flex: 1;
+  outline: none;
+  word-break: break-all;
+
+  &::placeholder {
+    color: #ffffff4d;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: #ffffffb3;
+  }
+
+  &.readOnly {
+    background-color: rgba(209, 210, 255, 15%);
+    border: none;
+    resize: none;
+  }
+
+  &.invalid {
+    border-color: #ff6d6d;
+  }
+}

@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { type PropsWithChildren } from 'react';
+import { Toaster } from 'react-hot-toast';
 import { useLocation } from 'react-router-dom';
 
 import WebsiteTopbar from '../components/WebsiteTopbar';
@@ -21,6 +22,7 @@ const AppShell = ({ children, currentLanguage, onLanguageChange }: Props) => {
       <main className={classNames(styles.main, pathname === '/' && styles.homeMain)}>
         {children}
       </main>
+      <Toaster position="bottom-center" />
     </div>
   );
 };

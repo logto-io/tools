@@ -17,7 +17,6 @@ export const toolRoutes = [
     path: '/base64-decoder',
     titleKey: 'tools.base64Decoder.title',
     descriptionKey: 'tools.base64Decoder.description',
-    disabled: true,
   },
 ] as const;
 

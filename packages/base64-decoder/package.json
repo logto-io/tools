@@ -1,36 +1,46 @@
 {
-  "name": "@logto/tools-dev-app",
+  "name": "@logto/tools-base64-decoder",
   "version": "0.0.0",
-  "private": true,
+  "description": "Base64 / Base64URL encoder and decoder package for Logto tools.",
   "type": "module",
+  "main": "src/index.ts",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "precommit": "lint-staged --config ../../lint-staged.config.cjs",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint --ext .ts --ext .tsx src vite.config.ts",
+    "dev": "vitest",
+    "build": "tsc",
+    "lint": "eslint --ext .ts --ext .tsx src",
     "stylelint": "stylelint \"src/**/*.scss\"",
     "typecheck": "tsc --noEmit",
-    "test": "echo \"No tests yet for dev app\""
+    "test": "vitest run"
+  },
+  "engines": {
+    "node": "^22.0.0"
   },
   "dependencies": {
-    "@logto/website-ui-foundation": "^0.2.0",
-    "@logto/tools-base64-decoder": "workspace:^",
-    "@logto/tools-jwt-decoder": "workspace:^",
+    "@silverhand/essentials": "^2.9.1",
     "classnames": "^2.3.1",
     "@logto/tools-i18nova": "workspace:^",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-hot-toast": "^2.4.0",
-    "react-router-dom": "^6.30.2"
+    "react-hot-toast": "^2.4.0"
+  },
+  "peerDependencies": {
+    "@logto/website-ui-foundation": "^0.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@logto/website-ui-foundation": "^0.2.0",
     "@silverhand/eslint-config": "^6.0.1",
     "@silverhand/eslint-config-react": "^6.0.2",
     "@silverhand/ts-config": "^6.0.0",
     "@silverhand/ts-config-react": "^6.0.0",
+    "@testing-library/react": "^16.3.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "eslint": "^8.56.0",
+    "jsdom": "^26.1.0",
     "lint-staged": "^16.0.0",
     "prettier": "^3.0.0",
     "stylelint": "^15.2.0",
@@ -38,7 +48,7 @@
     "vite": "^6.2.7",
     "vite-plugin-svgr": "^4.5.0",
     "vite-tsconfig-paths": "^6.0.0",
-    "sass-embedded": "^1.93.0"
+    "vitest": "^3.2.4"
   },
   "eslintConfig": {
     "extends": "@silverhand/react",

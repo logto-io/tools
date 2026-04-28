@@ -5,7 +5,7 @@ const config: UserConfig = {
   extends: ['@commitlint/config-conventional'],
   rules: {
     'type-enum': [2, 'always', [...conventional.rules['type-enum'][2], 'release']],
-    'scope-enum': [2, 'always', ['repo', 'jwt-decoder', 'dev-app', 'i18nova', 'components', 'ci', 'deps']],
+    'scope-enum': [2, 'always', ['repo', 'jwt-decoder', 'base64-decoder', 'dev-app', 'i18nova', 'components', 'ci', 'deps']],
   },
 };
 

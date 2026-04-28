@@ -1,0 +1,46 @@
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+@use '@logto/website-ui-foundation/scss/_media.scss' as media;
+
+.contentForm {
+  display: flex;
+  gap: _.unit(6);
+  width: 100%;
+  margin-bottom: _.unit(6);
+  align-items: stretch;
+
+  .plainColumn,
+  .base64Column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &.decode {
+    .base64Column {
+      order: 1;
+    }
+
+    .plainColumn {
+      order: 2;
+    }
+  }
+
+  textarea {
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+.errorText {
+  color: #ff6d6d;
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: _.unit(1);
+}
+
+@include media.mobile {
+  .contentForm {
+    flex-direction: column;
+  }
+}
