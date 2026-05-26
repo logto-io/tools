@@ -38,8 +38,8 @@ const sv = {
       description: 'Nästa steg: inspektera XML-assertions i samma verktygsskal.',
     },
     base64Decoder: {
-      title: 'Base64-avkodare',
-      description: 'Nästa steg: snabb granskning av binära och textbaserade payloads.',
+      title: 'Base64-kodare och -avkodare',
+      description: 'Koda och avkoda Base64- och Base64URL-data direkt i webbläsaren.',
     },
   },
 };

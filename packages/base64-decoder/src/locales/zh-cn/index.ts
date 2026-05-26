@@ -13,6 +13,7 @@ const base64_decoder = {
   invalid_base64: 'Base64 输入无效。',
   copy: '复制',
   copy_to_clipboard: '已复制到剪贴板',
+  copy_failed: '复制到剪贴板失败',
   welcome_sample: '欢迎使用 Logto Base64 编码 & 解码器。',
 };
 

@@ -14,6 +14,7 @@ const base64_decoder = {
   invalid_base64: 'Geçersiz Base64 girişi.',
   copy: 'Kopyala',
   copy_to_clipboard: 'Panoya kopyalandı',
+  copy_failed: 'Panoya kopyalanamadı',
   welcome_sample: 'Logto Base64 kodlayıcı ve çözücüsüne hoş geldiniz.',
 };
 

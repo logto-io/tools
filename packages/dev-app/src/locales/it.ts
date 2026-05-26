@@ -36,8 +36,8 @@ const it = {
       description: 'Prossimo passo: ispezionare asserzioni XML con la stessa shell strumenti.',
     },
     base64Decoder: {
-      title: 'Decodificatore Base64',
-      description: 'Prossimo passo: ispezione rapida di payload binari e testuali.',
+      title: 'Codificatore e decodificatore Base64',
+      description: 'Codifica e decodifica payload Base64 e Base64URL direttamente nel browser.',
     },
   },
 };

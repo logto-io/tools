@@ -37,8 +37,8 @@ const nl = {
       description: 'Volgende stap: XML-asserties inspecteren met dezelfde toolshell.',
     },
     base64Decoder: {
-      title: 'Base64-decoder',
-      description: 'Volgende stap: snelle inspectie van binaire en tekstpayloads.',
+      title: 'Base64-encoder en -decoder',
+      description: 'Codeer en decodeer Base64- en Base64URL-gegevens direct in de browser.',
     },
   },
 };

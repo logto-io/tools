@@ -14,6 +14,7 @@ const base64_decoder = {
   invalid_base64: 'Ogiltig Base64-inmatning.',
   copy: 'Kopiera',
   copy_to_clipboard: 'Kopierat till urklipp',
+  copy_failed: 'Kunde inte kopiera till urklipp',
   welcome_sample: 'Välkommen till Logtos Base64-kodare och -avkodare.',
 };
 

@@ -14,6 +14,7 @@ const base64_decoder = {
   invalid_base64: 'ข้อมูล Base64 ไม่ถูกต้อง',
   copy: 'คัดลอก',
   copy_to_clipboard: 'คัดลอกไปยังคลิปบอร์ดแล้ว',
+  copy_failed: 'คัดลอกไปยังคลิปบอร์ดไม่สำเร็จ',
   welcome_sample: 'ยินดีต้อนรับสู่ตัวเข้ารหัสและถอดรหัส Base64 ของ Logto',
 };
 

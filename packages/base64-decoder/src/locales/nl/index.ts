@@ -15,6 +15,7 @@ const base64_decoder = {
   invalid_base64: 'Ongeldige Base64-invoer.',
   copy: 'Kopiëren',
   copy_to_clipboard: 'Gekopieerd naar klembord',
+  copy_failed: 'Kopiëren naar klembord mislukt',
   welcome_sample: 'Welkom bij de Logto Base64-encoder en -decoder.',
 };
 

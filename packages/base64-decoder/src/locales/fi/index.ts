@@ -15,6 +15,7 @@ const base64_decoder = {
   invalid_base64: 'Virheellinen Base64-syöte.',
   copy: 'Kopioi',
   copy_to_clipboard: 'Kopioitu leikepöydälle',
+  copy_failed: 'Leikepöydälle kopiointi epäonnistui',
   welcome_sample: 'Tervetuloa Logton Base64-koodaimeen ja -purkajaan.',
 };
 

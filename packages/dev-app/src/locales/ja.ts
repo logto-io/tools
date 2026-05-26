@@ -36,8 +36,9 @@ const ja = {
       description: '次の予定: 同じツールシェルで XML アサーションを確認。',
     },
     base64Decoder: {
-      title: 'Base64 デコーダー',
-      description: '次の予定: バイナリおよびテキストペイロードを素早く確認。',
+      title: 'Base64 エンコーダー / デコーダー',
+      description:
+        'Base64 と Base64URL のペイロードをブラウザ上で直接エンコード・デコードできます。',
     },
   },
 };

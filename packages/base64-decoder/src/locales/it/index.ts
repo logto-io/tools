@@ -15,6 +15,7 @@ const base64_decoder = {
   invalid_base64: 'Input Base64 non valido.',
   copy: 'Copia',
   copy_to_clipboard: 'Copiato negli appunti',
+  copy_failed: 'Copia negli appunti non riuscita',
   welcome_sample: 'Benvenuto nel codificatore e decodificatore Base64 di Logto.',
 };
 

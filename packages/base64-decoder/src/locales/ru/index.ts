@@ -15,6 +15,7 @@ const base64_decoder = {
   invalid_base64: 'Недопустимые данные Base64.',
   copy: 'Копировать',
   copy_to_clipboard: 'Скопировано в буфер обмена',
+  copy_failed: 'Не удалось скопировать в буфер обмена',
   welcome_sample: 'Добро пожаловать в кодировщик и декодер Base64 от Logto.',
 };
 

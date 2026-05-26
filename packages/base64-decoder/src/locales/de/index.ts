@@ -15,6 +15,7 @@ const base64_decoder = {
   invalid_base64: 'Ungültige Base64-Eingabe.',
   copy: 'Kopieren',
   copy_to_clipboard: 'In Zwischenablage kopiert',
+  copy_failed: 'Konnte nicht in Zwischenablage kopieren',
   welcome_sample: 'Willkommen beim Logto Base64-Encoder & -Decoder.',
 };
 

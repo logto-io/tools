@@ -36,8 +36,8 @@ const ko = {
       description: '다음 계획: 동일한 도구 셸에서 XML 어설션 검사.',
     },
     base64Decoder: {
-      title: 'Base64 디코더',
-      description: '다음 계획: 바이너리 및 텍스트 페이로드 빠른 검사.',
+      title: 'Base64 인코더 및 디코더',
+      description: '브라우저에서 Base64와 Base64URL 데이터를 바로 인코딩하고 디코딩하세요.',
     },
   },
 };

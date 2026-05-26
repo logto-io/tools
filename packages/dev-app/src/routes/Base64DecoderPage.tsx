@@ -22,7 +22,7 @@ const Base64DecoderPage = () => {
 
   return (
     <div className={styles.page}>
-      <Base64Decoder className={styles.decoder} i18n={i18n} />
+      <Base64Decoder i18n={i18n} />
     </div>
   );
 };

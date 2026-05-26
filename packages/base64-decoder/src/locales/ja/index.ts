@@ -15,6 +15,7 @@ const base64_decoder = {
   invalid_base64: '無効な Base64 入力です。',
   copy: 'コピー',
   copy_to_clipboard: 'クリップボードにコピーしました',
+  copy_failed: 'クリップボードへのコピーに失敗しました',
   welcome_sample: 'Logto Base64 エンコーダー / デコーダーへようこそ。',
 };
 

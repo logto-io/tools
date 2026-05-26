@@ -13,6 +13,7 @@ const base64_decoder = {
   invalid_base64: 'إدخال Base64 غير صالح.',
   copy: 'نسخ',
   copy_to_clipboard: 'تم النسخ إلى الحافظة',
+  copy_failed: 'تعذّر النسخ إلى الحافظة',
   welcome_sample: 'مرحبًا بك في مشفّر ومفكّك Base64 من Logto.',
 };
 

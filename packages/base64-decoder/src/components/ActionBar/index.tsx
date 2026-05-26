@@ -17,7 +17,7 @@ const ActionBar = ({ output }: Props) => {
       await navigator.clipboard.writeText(output);
       toast.success(t('copy_to_clipboard'));
     } catch {
-      toast.error('Failed to copy to clipboard');
+      toast.error(t('copy_failed'));
     }
   };
 

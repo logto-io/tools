@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import ActionBar from './components/ActionBar';
 import Headline from './components/Headline';
@@ -23,10 +23,28 @@ type Computed = {
 
 const Decoder = ({ className }: Props) => {
   const { t } = usePhrases();
+  const welcomeSample = t('welcome_sample');
   const [mode, setMode] = useState<EditorMode>(EditorMode.Decode);
   const [urlSafe, setUrlSafe] = useState(false);
   const [plainInput, setPlainInput] = useState('');
-  const [base64Input, setBase64Input] = useState(() => encodeBase64(t('welcome_sample')));
+  const [base64Input, setBase64Input] = useState(() => encodeBase64(welcomeSample));
+  const [hasUserEdited, setHasUserEdited] = useState(false);
+
+  useEffect(() => {
+    if (!hasUserEdited) {
+      setBase64Input(encodeBase64(welcomeSample));
+    }
+  }, [welcomeSample, hasUserEdited]);
+
+  const onPlainInputChange = (next: string) => {
+    setHasUserEdited(true);
+    setPlainInput(next);
+  };
+
+  const onBase64InputChange = (next: string) => {
+    setHasUserEdited(true);
+    setBase64Input(next);
+  };
 
   const { plainText, base64Text, hasInvalidBase64 } = useMemo<Computed>(() => {
     if (mode === EditorMode.Encode) {
@@ -81,7 +99,7 @@ const Decoder = ({ className }: Props) => {
             value={plainText}
             placeholder={mode === EditorMode.Encode ? t('plain_text_placeholder') : undefined}
             isReadOnly={mode === EditorMode.Decode}
-            onChange={setPlainInput}
+            onChange={onPlainInputChange}
           />
         </div>
         <div className={styles.base64Column}>
@@ -91,7 +109,7 @@ const Decoder = ({ className }: Props) => {
             placeholder={mode === EditorMode.Decode ? t('base64_placeholder') : undefined}
             isReadOnly={mode === EditorMode.Encode}
             isInvalid={hasInvalidBase64}
-            onChange={setBase64Input}
+            onChange={onBase64InputChange}
           />
           {hasInvalidBase64 && <div className={styles.errorText}>{t('invalid_base64')}</div>}
         </div>

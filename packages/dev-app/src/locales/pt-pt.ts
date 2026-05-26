@@ -38,8 +38,8 @@ const ptPT = {
       description: 'Próximo passo: inspecionar asserções XML na mesma shell de ferramentas.',
     },
     base64Decoder: {
-      title: 'Descodificador Base64',
-      description: 'Próximo passo: inspeção rápida de cargas binárias e de texto.',
+      title: 'Codificador e descodificador Base64',
+      description: 'Codifique e descodifique dados Base64 e Base64URL diretamente no navegador.',
     },
   },
 };

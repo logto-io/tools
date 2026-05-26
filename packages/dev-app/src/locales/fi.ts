@@ -38,8 +38,8 @@ const fi = {
       description: 'Seuraavaksi suunnitteilla: XML-väitteiden tarkastelu samalla työkalukuorella.',
     },
     base64Decoder: {
-      title: 'Base64-dekooderi',
-      description: 'Seuraavaksi suunnitteilla: tekstin ja binääridatan nopea tarkastelu.',
+      title: 'Base64-koodain ja -purkaja',
+      description: 'Koodaa ja pura Base64- ja Base64URL-dataa suoraan selaimessa.',
     },
   },
 };

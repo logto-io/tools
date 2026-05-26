@@ -15,6 +15,7 @@ const base64_decoder = {
   invalid_base64: 'Nieprawidłowe dane Base64.',
   copy: 'Kopiuj',
   copy_to_clipboard: 'Skopiowano do schowka',
+  copy_failed: 'Nie udało się skopiować do schowka',
   welcome_sample: 'Witamy w koderze i dekoderze Base64 od Logto.',
 };
 
