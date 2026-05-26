@@ -39,8 +39,84 @@ importers:
         specifier: ^5.7.2
         version: 5.9.3
 
+  packages/base64-decoder:
+    dependencies:
+      '@logto/tools-i18nova':
+        specifier: workspace:^
+        version: link:../i18nova
+      classnames:
+        specifier: ^2.3.1
+        version: 2.5.1
+      react:
+        specifier: ^18.0.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.0.0
+        version: 18.3.1(react@18.3.1)
+      react-hot-toast:
+        specifier: ^2.4.0
+        version: 2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+    devDependencies:
+      '@logto/website-ui-foundation':
+        specifier: ^0.2.0
+        version: 0.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@silverhand/eslint-config':
+        specifier: ^6.0.1
+        version: 6.0.1(eslint@8.57.1)(prettier@3.8.1)(typescript@5.9.3)
+      '@silverhand/eslint-config-react':
+        specifier: ^6.0.2
+        version: 6.0.2(eslint@8.57.1)(postcss@8.5.8)(prettier@3.8.1)(stylelint@15.11.0(typescript@5.9.3))(typescript@5.9.3)
+      '@silverhand/ts-config':
+        specifier: ^6.0.0
+        version: 6.0.0(typescript@5.9.3)
+      '@silverhand/ts-config-react':
+        specifier: ^6.0.0
+        version: 6.0.0(typescript@5.9.3)
+      '@testing-library/react':
+        specifier: ^16.3.0
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@types/react':
+        specifier: ^18.3.3
+        version: 18.3.28
+      '@types/react-dom':
+        specifier: ^18.3.0
+        version: 18.3.7(@types/react@18.3.28)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.57.1
+      jsdom:
+        specifier: ^26.1.0
+        version: 26.1.0
+      lint-staged:
+        specifier: ^16.0.0
+        version: 16.4.0
+      prettier:
+        specifier: ^3.0.0
+        version: 3.8.1
+      stylelint:
+        specifier: ^15.2.0
+        version: 15.11.0(typescript@5.9.3)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.2.7
+        version: 6.4.2(@types/node@25.5.2)(jiti@2.6.1)(sass-embedded@1.99.0)(sass@1.99.0)(yaml@2.8.3)
+      vite-plugin-svgr:
+        specifier: ^4.5.0
+        version: 4.5.0(rollup@4.60.1)(typescript@5.9.3)(vite@6.4.2(@types/node@25.5.2)(jiti@2.6.1)(sass-embedded@1.99.0)(sass@1.99.0)(yaml@2.8.3))
+      vite-tsconfig-paths:
+        specifier: ^6.0.0
+        version: 6.1.1(typescript@5.9.3)(vite@6.4.2(@types/node@25.5.2)(jiti@2.6.1)(sass-embedded@1.99.0)(sass@1.99.0)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/node@25.5.2)(jiti@2.6.1)(jsdom@26.1.0)(sass-embedded@1.99.0)(sass@1.99.0)(yaml@2.8.3)
+
   packages/dev-app:
     dependencies:
+      '@logto/tools-base64-decoder':
+        specifier: workspace:^
+        version: link:../base64-decoder
       '@logto/tools-i18nova':
         specifier: workspace:^
         version: link:../i18nova
@@ -59,6 +135,9 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+      react-hot-toast:
+        specifier: ^2.4.0
+        version: 2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-router-dom:
         specifier: ^6.30.2
         version: 6.30.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

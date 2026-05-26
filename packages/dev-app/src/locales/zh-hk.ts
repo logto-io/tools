@@ -36,8 +36,8 @@ const zhHK = {
       description: '下一步規劃：在同一工具外殼中檢視 XML 聲明。',
     },
     base64Decoder: {
-      title: 'Base64 解碼器',
-      description: '下一步規劃：快速檢視二進位與文字載荷。',
+      title: 'Base64 編碼 & 解碼器',
+      description: '在瀏覽器中直接編碼與解碼 Base64 及 Base64URL 資料。',
     },
   },
 };

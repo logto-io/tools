@@ -34,8 +34,8 @@ const en = {
       description: 'Planned next: inspect XML assertions with the same tooling shell.',
     },
     base64Decoder: {
-      title: 'Base64 decoder',
-      description: 'Planned next: quick binary and text payload inspection.',
+      title: 'Base64 encoder & decoder',
+      description: 'Encode and decode Base64 and Base64URL payloads directly in the browser.',
     },
   },
 };

@@ -36,8 +36,8 @@ const zhCN = {
       description: '下一步计划：在同一工具壳层中解析 XML 断言。',
     },
     base64Decoder: {
-      title: 'Base64 解码器',
-      description: '下一步计划：快速查看二进制与文本载荷。',
+      title: 'Base64 编码 & 解码器',
+      description: '在浏览器中直接编码和解码 Base64 与 Base64URL 数据。',
     },
   },
 };

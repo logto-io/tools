@@ -37,8 +37,8 @@ const plPL = {
       description: 'Następnie: analiza asercji XML w tej samej powłoce narzędzi.',
     },
     base64Decoder: {
-      title: 'Dekoder Base64',
-      description: 'Następnie: szybka analiza danych binarnych i tekstowych.',
+      title: 'Koder i dekoder Base64',
+      description: 'Koduj i dekoduj dane Base64 oraz Base64URL bezpośrednio w przeglądarce.',
     },
   },
 };

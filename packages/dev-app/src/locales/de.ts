@@ -37,8 +37,8 @@ const de = {
       description: 'Als Nächstes geplant: XML-Assertions in derselben Tool-Shell prüfen.',
     },
     base64Decoder: {
-      title: 'Base64-Decoder',
-      description: 'Als Nächstes geplant: schnelle Analyse von Text- und Binärdaten.',
+      title: 'Base64-Encoder & -Decoder',
+      description: 'Kodiere und dekodiere Base64- und Base64URL-Daten direkt im Browser.',
     },
   },
 };

@@ -38,8 +38,8 @@ const trTR = {
       description: 'Sonraki plan: Aynı araç kabuğunda XML assertion’larını incelemek.',
     },
     base64Decoder: {
-      title: 'Base64 çözücü',
-      description: 'Sonraki plan: ikili ve metin yüklerini hızlıca incelemek.',
+      title: 'Base64 kodlayıcı ve çözücü',
+      description: 'Base64 ve Base64URL verilerini doğrudan tarayıcıda kodlayın ve çözün.',
     },
   },
 };

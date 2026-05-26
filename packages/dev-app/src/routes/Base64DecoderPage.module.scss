@@ -1,0 +1,10 @@
+.page {
+  min-height: calc(100vh - 113px);
+  background: linear-gradient(180deg, #141420 0%, #141420 52%, #17162b 74%, #21193a 100%);
+}
+
+@media (width <= 768px) {
+  .page {
+    min-height: calc(100vh - 89px);
+  }
+}

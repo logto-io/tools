@@ -38,8 +38,8 @@ const es = {
       description: 'Siguiente paso planificado: inspeccionar aserciones XML con la misma shell.',
     },
     base64Decoder: {
-      title: 'Decodificador Base64',
-      description: 'Siguiente paso planificado: inspección rápida de contenido binario y de texto.',
+      title: 'Codificador y decodificador Base64',
+      description: 'Codifica y decodifica datos Base64 y Base64URL directamente en el navegador.',
     },
   },
 };

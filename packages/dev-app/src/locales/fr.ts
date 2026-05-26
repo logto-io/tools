@@ -38,8 +38,9 @@ const fr = {
       description: 'Prochaine étape prévue : inspecter les assertions XML avec la même coque.',
     },
     base64Decoder: {
-      title: 'Décodeur Base64',
-      description: 'Prochaine étape prévue : inspection rapide de charges binaires et texte.',
+      title: 'Encodeur et décodeur Base64',
+      description:
+        'Encodez et décodez des données Base64 et Base64URL directement dans le navigateur.',
     },
   },
 };
