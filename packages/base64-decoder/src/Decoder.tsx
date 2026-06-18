@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useEffect, useMemo, useState } from 'react';
+import { type ReactNode, useEffect, useMemo, useState } from 'react';
 
 import ActionBar from './components/ActionBar';
 import Headline from './components/Headline';
@@ -13,6 +13,7 @@ import { Base64DecodeError, decodeBase64, encodeBase64 } from './utils';
 
 type Props = {
   readonly className?: string;
+  readonly urlSafeLearnMore?: ReactNode;
 };
 
 type Computed = {
@@ -21,7 +22,7 @@ type Computed = {
   hasInvalidBase64: boolean;
 };
 
-const Decoder = ({ className }: Props) => {
+const Decoder = ({ className, urlSafeLearnMore }: Props) => {
   const { t } = usePhrases();
   const welcomeSample = t('welcome_sample');
   const [mode, setMode] = useState<EditorMode>(EditorMode.Decode);
@@ -114,7 +115,11 @@ const Decoder = ({ className }: Props) => {
           {hasInvalidBase64 && <div className={styles.errorText}>{t('invalid_base64')}</div>}
         </div>
       </div>
-      <OptionsBar isUrlSafe={urlSafe} onUrlSafeChange={setUrlSafe} />
+      <OptionsBar
+        isUrlSafe={urlSafe}
+        urlSafeLearnMore={urlSafeLearnMore}
+        onUrlSafeChange={setUrlSafe}
+      />
       <ActionBar output={output} />
     </Section>
   );
