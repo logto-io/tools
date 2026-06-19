@@ -1,7 +1,7 @@
 const base64_decoder = {
-  title: 'Encodeur et décodeur Base64 | Rapide, privé, dans le navigateur',
+  title: 'Encodeur et décodeur Base64, expliqué | Privé, dans le navigateur',
   description:
-    'Encodez et décodez des données Base64 et Base64URL dans le navigateur. Tout reste sur votre appareil.',
+    'Encodez et décodez des données Base64 et Base64URL dans le navigateur. Tout reste sur votre appareil. En prime : ce qu’est Base64, comment ça marche et quand l’utiliser.',
   encoder: 'Encodeur',
   decoder: 'Décodeur',
   subtitle:

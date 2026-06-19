@@ -1,7 +1,7 @@
 const base64_decoder = {
-  title: 'Base64-kodare och -avkodare | Snabb, privat, i webbläsaren',
+  title: 'Base64-kodare och -avkodare, förklarat | Privat, i webbläsaren',
   description:
-    'Koda och avkoda Base64- och Base64URL-data direkt i webbläsaren. Allt stannar på din enhet.',
+    'Koda och avkoda Base64- och Base64URL-data direkt i webbläsaren. Allt stannar på din enhet. Dessutom: vad Base64 är, hur det fungerar och när du använder det.',
   encoder: 'Kodare',
   decoder: 'Avkodare',
   subtitle: 'Dina data är 100 % privata -- Base64 kodas och avkodas helt och hållet på din enhet.',
