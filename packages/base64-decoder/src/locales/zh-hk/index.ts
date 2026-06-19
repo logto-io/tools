@@ -1,6 +1,7 @@
 const base64_decoder = {
-  title: 'Base64 編碼 & 解碼器 | 快速、私密、於瀏覽器中運行',
-  description: '在瀏覽器中編碼與解碼 Base64 及 Base64URL 資料，所有內容都留在你的裝置上。',
+  title: 'Base64 編碼 & 解碼器，原理詳解 | 私密、於瀏覽器中運行',
+  description:
+    '在瀏覽器中編碼與解碼 Base64 及 Base64URL 資料，所有內容都留在你的裝置上。同時講清 Base64 是什麼、如何運作、何時該用。',
   encoder: '編碼器',
   decoder: '解碼器',
   subtitle: '你的資料 100% 私密 —— Base64 的編碼與解碼全部在你的裝置上完成。',

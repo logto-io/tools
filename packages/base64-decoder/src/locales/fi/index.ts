@@ -1,7 +1,7 @@
 const base64_decoder = {
-  title: 'Base64-koodain ja -purkaja | Nopea, yksityinen, selaimessa',
+  title: 'Base64-koodain ja -purkaja, selitetty | Yksityinen, selaimessa',
   description:
-    'Koodaa ja pura Base64- ja Base64URL-dataa selaimessa. Kaikki pysyy omalla laitteellasi.',
+    'Koodaa ja pura Base64- ja Base64URL-dataa selaimessa. Kaikki pysyy omalla laitteellasi. Lisäksi: mitä Base64 on, miten se toimii ja milloin sitä käytät.',
   encoder: 'Koodain',
   decoder: 'Purkaja',
   subtitle:

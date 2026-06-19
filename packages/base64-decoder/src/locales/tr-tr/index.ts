@@ -1,7 +1,7 @@
 const base64_decoder = {
-  title: 'Base64 kodlayıcı ve çözücü | Hızlı, gizli, tarayıcıda çalışır',
+  title: 'Base64 kodlayıcı ve çözücü, açıklamalı | Gizli, tarayıcıda çalışır',
   description:
-    'Base64 ve Base64URL verilerini tarayıcıda kodlayın ve çözün. Her şey cihazınızda kalır.',
+    'Base64 ve Base64URL verilerini tarayıcıda kodlayın ve çözün. Her şey cihazınızda kalır. Ayrıca Base64’ün ne olduğunu, nasıl çalıştığını ve ne zaman kullanılacağını açıklıyoruz.',
   encoder: 'Kodlayıcı',
   decoder: 'Çözücü',
   subtitle: 'Verileriniz %100 gizlidir -- Base64 tamamen cihazınızda kodlanır ve çözülür.',
