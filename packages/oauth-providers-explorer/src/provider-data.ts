@@ -153,7 +153,7 @@ const providers: ProviderData[] = [
     },
     documentations: [
       {
-        title: 'Discord OAuth2 URls',
+        title: 'Discord OAuth2 URLs',
         url: 'https://discord.com/developers/docs/topics/oauth2#shared-resources-oauth2-urls',
       },
       {
@@ -453,7 +453,7 @@ const providers: ProviderData[] = [
     oidcSupported: true,
     endpoints: {
       oidcDiscoveryEndpoint: 'https://www.linkedin.com/oauth/.well-known/openid-configuration',
-      issuer: '"https://www.linkedin.com/oauth',
+      issuer: 'https://www.linkedin.com/oauth',
       authorizationEndpoint: 'https://www.linkedin.com/oauth/v2/authorization',
       tokenEndpoint: 'https://www.linkedin.com/oauth/v2/accessToken',
       userinfoEndpoint: 'https://api.linkedin.com/v2/userinfo',
