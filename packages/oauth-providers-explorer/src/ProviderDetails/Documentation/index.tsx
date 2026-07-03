@@ -24,7 +24,7 @@ const Documentation = ({ data: { name, oidcSupported, documentations } }: Props)
               key={title}
               href={url}
               target="_blank"
-              rel="nofollow noreferrer"
+              rel="noopener nofollow noreferrer"
               className={styles.link}
             >
               <DocumentationIcon />

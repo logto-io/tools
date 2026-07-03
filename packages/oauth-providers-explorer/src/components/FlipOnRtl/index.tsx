@@ -6,7 +6,8 @@ import { useToolDirection } from '../../i18n';
 import styles from './index.module.scss';
 
 type Props = {
-  readonly children: ReactElement<HTMLElement>;
+  /** A single HTML or SVG element that accepts a `className` (e.g. an icon component). */
+  readonly children: ReactElement<{ className?: string }>;
 };
 
 /**
