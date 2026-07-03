@@ -1,7 +1,9 @@
+import { type FunctionComponent, type SVGProps } from 'react';
+
 export type ProviderData = {
   id: string;
   name: string;
-  Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  Icon: FunctionComponent<SVGProps<SVGSVGElement>>;
   oidcSupported?: boolean;
   endpoints: {
     oidcDiscoveryEndpoint?: string;

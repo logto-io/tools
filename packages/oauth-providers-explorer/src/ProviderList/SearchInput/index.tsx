@@ -16,6 +16,8 @@ type Props = {
 const SearchInput = ({ onChange, placeholder, value }: Props) => {
   const { t } = usePhrases();
   const isClearable = Boolean(value);
+  // Fall back to the localized default so the input always has an accessible name.
+  const resolvedPlaceholder = placeholder ?? t('search_placeholder');
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
@@ -32,8 +34,8 @@ const SearchInput = ({ onChange, placeholder, value }: Props) => {
         <input
           type="text"
           className={styles.input}
-          placeholder={placeholder}
-          aria-label={placeholder}
+          placeholder={resolvedPlaceholder}
+          aria-label={resolvedPlaceholder}
           value={value ?? ''}
           onChange={handleChange}
         />

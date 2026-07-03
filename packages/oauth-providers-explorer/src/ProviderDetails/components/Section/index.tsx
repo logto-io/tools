@@ -1,8 +1,10 @@
+import { type ReactNode } from 'react';
+
 import styles from './index.module.scss';
 
 type Props = {
   readonly title: string;
-  readonly children: React.ReactNode;
+  readonly children: ReactNode;
 };
 
 const Section = ({ title, children }: Props) => {
