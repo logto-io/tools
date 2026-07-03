@@ -30,7 +30,7 @@ const ProviderList = ({ buildProviderDetailsUrl }: Props) => {
         <div className={styles.list}>
           {providers.map((provider) => (
             <ProviderItem
-              key={provider.name}
+              key={provider.id}
               data={provider}
               buildProviderDetailsUrl={buildProviderDetailsUrl}
             />

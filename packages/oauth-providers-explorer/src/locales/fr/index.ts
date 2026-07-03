@@ -5,6 +5,9 @@ const oauth_providers = {
   hint: 'Toutes les informations sur les fournisseurs proviennent de la documentation officielle, avec des liens sur chaque page pour référence',
   app_title: 'Exploreur de fournisseurs <span>OAuth & OIDC</span>',
   search_placeholder: 'Recherchez un fournisseur (par exemple, GitHub, Google, Facebook)',
+  clear_search: 'Effacer la recherche',
+  copy: 'Copier',
+  copied: 'Copié dans le presse-papiers',
   back_to_explorer: "Retour à l'explorateur",
   details_title: 'Points de terminaison OAuth de {{name}}',
   details_description:

@@ -11,11 +11,13 @@ type Props = {
   readonly data: ProviderData;
 };
 
-const Documentation = ({ data: { name, documentations } }: Props) => {
+const Documentation = ({ data: { name, oidcSupported, documentations } }: Props) => {
   const { t } = usePhrases();
   return (
     <div className={styles.documentation}>
-      <Section title={t('documentation_title', { name })}>
+      <Section
+        title={t(oidcSupported ? 'oidc_documentation_title' : 'documentation_title', { name })}
+      >
         <div className={styles.list}>
           {documentations?.map(({ title, url }) => (
             <a

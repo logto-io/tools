@@ -1,7 +1,9 @@
-import { useState, type ChangeEvent } from 'react';
+import { type ChangeEvent } from 'react';
 
 import CloseIcon from '../../assets/cross.svg?react';
 import SearchIcon from '../../assets/search.svg?react';
+import { usePhrases } from '../../i18n';
+import { onKeyDownHandler } from '../../utils/a11y';
 
 import styles from './index.module.scss';
 
@@ -12,16 +14,15 @@ type Props = {
 };
 
 const SearchInput = ({ onChange, placeholder, value }: Props) => {
-  const [isClearable, setIsClearable] = useState(false);
+  const { t } = usePhrases();
+  const isClearable = Boolean(value);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
-    setIsClearable(!!event.target.value);
   };
 
   const handleClear = () => {
     onChange('');
-    setIsClearable(false);
   };
 
   return (
@@ -35,7 +36,16 @@ const SearchInput = ({ onChange, placeholder, value }: Props) => {
           value={value}
           onChange={handleChange}
         />
-        {isClearable && <CloseIcon className={styles.clearIcon} onClick={handleClear} />}
+        {isClearable && (
+          <CloseIcon
+            role="button"
+            tabIndex={0}
+            aria-label={t('clear_search')}
+            className={styles.clearIcon}
+            onClick={handleClear}
+            onKeyDown={onKeyDownHandler(handleClear)}
+          />
+        )}
       </div>
     </div>
   );

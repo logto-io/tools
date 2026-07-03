@@ -5,7 +5,13 @@ import ProviderList from './ProviderList';
 import { I18nProvider, type OAuthProvidersExplorerI18nAdapter } from './i18n';
 import styles from './index.module.scss';
 
-/** Default relative URL so the details page resolves under the current list path. */
+/**
+ * Default details URL, intentionally relative (no leading slash): hosts often mount the
+ * explorer under a locale prefix (e.g. `/de/oauth-providers-explorer`), and a relative
+ * `oauth-providers-explorer/{id}` resolved against that path keeps the prefix, while an
+ * absolute `/oauth-providers-explorer/{id}` would drop it. Hosts with different routing
+ * can override via the `buildProviderDetailsUrl` prop.
+ */
 const defaultBuildProviderDetailsUrl = (id: string) => `oauth-providers-explorer/${id}`;
 
 type Props = {
