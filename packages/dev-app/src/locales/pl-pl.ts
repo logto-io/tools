@@ -40,6 +40,11 @@ const plPL = {
       title: 'Koder i dekoder Base64',
       description: 'Koduj i dekoduj dane Base64 oraz Base64URL bezpośrednio w przeglądarce.',
     },
+    oauthProvidersExplorer: {
+      title: 'Eksplorator Dostawców OAuth i OIDC',
+      description:
+        'Szybko wyszukuj punkty końcowe OAuth i powiązane zasoby deweloperskie dla popularnych dostawców OAuth i OIDC.',
+    },
   },
 };
 

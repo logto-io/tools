@@ -1,0 +1,15 @@
+// Root containers mirror the host page layout (a centered flex column section) so the
+// inner components keep the same sizing behavior as when they were direct children.
+.explorer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}

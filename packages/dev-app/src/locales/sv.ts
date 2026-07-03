@@ -41,6 +41,11 @@ const sv = {
       title: 'Base64-kodare och -avkodare',
       description: 'Koda och avkoda Base64- och Base64URL-data direkt i webbläsaren.',
     },
+    oauthProvidersExplorer: {
+      title: 'OAuth- och OIDC-leverantörsutforskare',
+      description:
+        'Hitta snabbt OAuth-slutpunkter och relaterade utvecklingsresurser för populära OAuth- och OIDC-leverantörer.',
+    },
   },
 };
 

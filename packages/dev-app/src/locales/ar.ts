@@ -39,6 +39,11 @@ const ar = {
       title: 'مشفّر ومفكّك Base64',
       description: 'شفّر وفكّ تشفير حمولات Base64 وBase64URL مباشرة في المتصفح.',
     },
+    oauthProvidersExplorer: {
+      title: 'مستكشف مزودي OAuth و OIDC',
+      description:
+        'ابحث بسرعة عن نقاط نهاية OAuth والموارد التطويرية ذات الصلة لمزودي OAuth و OIDC الشائعين.',
+    },
   },
 };
 

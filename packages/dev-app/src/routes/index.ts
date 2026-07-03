@@ -18,6 +18,12 @@ export const toolRoutes = [
     titleKey: 'tools.base64Decoder.title',
     descriptionKey: 'tools.base64Decoder.description',
   },
+  {
+    id: 'oauthProvidersExplorer',
+    path: '/oauth-providers-explorer',
+    titleKey: 'tools.oauthProvidersExplorer.title',
+    descriptionKey: 'tools.oauthProvidersExplorer.description',
+  },
 ] as const;
 
 export type ToolRoute = (typeof toolRoutes)[number];

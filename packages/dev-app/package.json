@@ -16,6 +16,7 @@
     "@logto/website-ui-foundation": "^0.2.0",
     "@logto/tools-base64-decoder": "workspace:^",
     "@logto/tools-jwt-decoder": "workspace:^",
+    "@logto/tools-oauth-providers-explorer": "workspace:^",
     "classnames": "^2.3.1",
     "@logto/tools-i18nova": "workspace:^",
     "react": "^18.3.1",

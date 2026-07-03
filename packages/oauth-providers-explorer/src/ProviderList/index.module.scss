@@ -1,0 +1,35 @@
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+@use '@logto/website-ui-foundation/scss/_media.scss' as media;
+
+.hint {
+  display: flex;
+  align-items: center;
+  gap: _.unit(2);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: normal;
+  color: #ffffffb3;
+  margin-top: _.unit(8);
+
+  .shieldIcon {
+    width: 20;
+    height: 20px;
+    color: #947dff;
+  }
+}
+
+.list {
+  margin-top: _.unit(12);
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: _.unit(5);
+
+  @include media.medium {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include media.mobile {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}

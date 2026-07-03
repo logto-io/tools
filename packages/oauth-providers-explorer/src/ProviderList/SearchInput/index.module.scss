@@ -1,0 +1,60 @@
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+@use '@logto/website-ui-foundation/scss/_media.scss' as media;
+
+.container {
+  position: relative;
+  width: 100%;
+  margin-top: _.unit(6);
+  display: flex;
+  gap: _.unit(3);
+
+  .searchWrapper {
+    position: relative;
+    flex: 1;
+  }
+
+  .searchIcon {
+    position: absolute;
+    left: _.unit(4);
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8c8e8f;
+    width: 20px;
+    height: 20px;
+  }
+
+  .input {
+    width: 100%;
+    height: _.unit(12);
+    background: transparent;
+    border: 1px solid #5c5f60;
+    border-radius: _.unit(2);
+    padding: 0 _.unit(4) 0 _.unit(12);
+    color: #fff;
+    font-size: 1rem;
+    outline: 3px solid transparent;
+    transition: outline 0.2s ease-in-out;
+
+    &::placeholder {
+      color: #8c8e8f;
+    }
+
+    &:focus {
+      outline: 3px solid #947dff99;
+    }
+  }
+
+  .clearIcon {
+    position: absolute;
+    right: _.unit(4);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    &:hover {
+      color: #8c8e8f;
+    }
+  }
+}

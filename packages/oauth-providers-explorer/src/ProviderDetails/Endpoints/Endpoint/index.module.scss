@@ -1,0 +1,43 @@
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+
+.endpointUrl {
+  height: 44px;
+  background-color: #141420cc;
+  border-radius: 8px;
+  padding: _.unit(3);
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    padding: _.unit(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    > svg {
+      color: #947dff;
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      background-color: #2a2a2a;
+    }
+  }
+}
+
+.description {
+  font-size: 14px;
+  line-height: 20px;
+  color: #9da3ae;
+  margin-top: _.unit(2);
+}

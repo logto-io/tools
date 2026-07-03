@@ -40,6 +40,11 @@ const de = {
       title: 'Base64-Encoder & -Decoder',
       description: 'Kodiere und dekodiere Base64- und Base64URL-Daten direkt im Browser.',
     },
+    oauthProvidersExplorer: {
+      title: 'OAuth- & OIDC-Provider-Explorer',
+      description:
+        'Schnelles Nachschlagen von OAuth-Endpunkten und zugehörigen Entwicklungsressourcen für beliebte OAuth- und OIDC-Provider.',
+    },
   },
 };
 

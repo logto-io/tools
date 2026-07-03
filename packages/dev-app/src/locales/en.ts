@@ -37,6 +37,11 @@ const en = {
       title: 'Base64 encoder & decoder',
       description: 'Encode and decode Base64 and Base64URL payloads directly in the browser.',
     },
+    oauthProvidersExplorer: {
+      title: 'OAuth & OIDC Providers Explorer',
+      description:
+        'Quickly look up OAuth endpoints and related development resources for popular OAuth & OIDC providers.',
+    },
   },
 };
 

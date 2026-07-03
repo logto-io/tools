@@ -1,0 +1,6 @@
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+
+.endpoints {
+  margin-top: _.unit(12);
+  width: 100%;
+}

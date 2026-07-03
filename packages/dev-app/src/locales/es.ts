@@ -41,6 +41,11 @@ const es = {
       title: 'Codificador y decodificador Base64',
       description: 'Codifica y decodifica datos Base64 y Base64URL directamente en el navegador.',
     },
+    oauthProvidersExplorer: {
+      title: 'Explorador de Proveedores OAuth y OIDC',
+      description:
+        'Consulta rápidamente los puntos finales de OAuth y los recursos de desarrollo relacionados para proveedores populares de OAuth y OIDC.',
+    },
   },
 };
 

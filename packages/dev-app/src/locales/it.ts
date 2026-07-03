@@ -39,6 +39,11 @@ const it = {
       title: 'Codificatore e decodificatore Base64',
       description: 'Codifica e decodifica payload Base64 e Base64URL direttamente nel browser.',
     },
+    oauthProvidersExplorer: {
+      title: 'Esploratore dei provider OAuth & OIDC',
+      description:
+        'Trova rapidamente gli endpoint OAuth e le risorse di sviluppo correlate per i provider OAuth & OIDC più popolari.',
+    },
   },
 };
 

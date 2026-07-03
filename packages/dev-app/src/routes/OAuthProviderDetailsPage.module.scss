@@ -1,0 +1,36 @@
+.page {
+  min-height: calc(100vh - 113px);
+  background: #141420;
+  padding-top: 96px;
+  padding-bottom: 80px;
+}
+
+.content {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+  color: #fff;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  margin-bottom: 32px;
+
+  &:hover {
+    color: #947dff;
+    text-decoration: underline;
+  }
+}
+
+@media (width <= 768px) {
+  .page {
+    min-height: calc(100vh - 89px);
+  }
+}
