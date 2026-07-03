@@ -1,7 +1,7 @@
 export type ProviderData = {
   id: string;
   name: string;
-  Icon: React.FunctionComponent;
+  Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   oidcSupported?: boolean;
   endpoints: {
     oidcDiscoveryEndpoint?: string;

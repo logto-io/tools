@@ -33,7 +33,8 @@ const SearchInput = ({ onChange, placeholder, value }: Props) => {
           type="text"
           className={styles.input}
           placeholder={placeholder}
-          value={value}
+          aria-label={placeholder}
+          value={value ?? ''}
           onChange={handleChange}
         />
         {isClearable && (

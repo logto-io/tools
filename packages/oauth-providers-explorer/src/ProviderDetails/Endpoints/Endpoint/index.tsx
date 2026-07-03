@@ -3,7 +3,6 @@ import { useState } from 'react';
 import CheckIcon from '../../../assets/checkmark.svg?react';
 import CopyIcon from '../../../assets/copy.svg?react';
 import { usePhrases } from '../../../i18n';
-import { onKeyDownHandler } from '../../../utils/a11y';
 import Section from '../../components/Section';
 
 import styles from './index.module.scss';
@@ -35,19 +34,15 @@ const Endpoint = ({ title, description, endpoint }: Props) => {
     <Section title={title}>
       <div className={styles.endpointUrl}>
         {endpoint}
-        <span
-          role="button"
-          tabIndex={0}
+        <button
+          type="button"
           aria-label={isCopied ? t('copied') : t('copy')}
           className={styles.icon}
           onClick={handleCopy}
           onMouseLeave={handleMouseLeave}
-          onKeyDown={onKeyDownHandler(() => {
-            void handleCopy();
-          })}
         >
           {isCopied ? <CheckIcon /> : <CopyIcon />}
-        </span>
+        </button>
       </div>
       <div className={styles.description}>{description}</div>
     </Section>
