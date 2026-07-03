@@ -41,6 +41,11 @@ const trTR = {
       title: 'Base64 kodlayıcı ve çözücü',
       description: 'Base64 ve Base64URL verilerini doğrudan tarayıcıda kodlayın ve çözün.',
     },
+    oauthProvidersExplorer: {
+      title: 'OAuth ve OIDC Sağlayıcıları Gezgini',
+      description:
+        'Popüler OAuth ve OIDC sağlayıcıları için OAuth uç noktalarını ve ilgili geliştirme kaynaklarını hızlıca arayın.',
+    },
   },
 };
 

@@ -41,6 +41,11 @@ const ptPT = {
       title: 'Codificador e descodificador Base64',
       description: 'Codifique e descodifique dados Base64 e Base64URL diretamente no navegador.',
     },
+    oauthProvidersExplorer: {
+      title: 'Explorador de Fornecedores de OAuth e OIDC',
+      description:
+        'Consulte rapidamente os endpoints OAuth e os recursos de desenvolvimento relacionados para fornecedores populares de OAuth e OIDC.',
+    },
   },
 };
 

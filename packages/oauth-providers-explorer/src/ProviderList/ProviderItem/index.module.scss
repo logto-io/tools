@@ -1,0 +1,49 @@
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+
+.item {
+  display: flex;
+  border-radius: 12px;
+  padding: _.unit(4);
+  gap: _.unit(3);
+  text-decoration: none;
+  color: #fff;
+  background: #ffffff1a;
+  transition: transform 0.3s ease, background 0.3s ease;
+
+  &:hover {
+    background: rgba(180, 180, 180, 8%);
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > svg {
+      display: block;
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .data {
+    display: flex;
+    flex-direction: column;
+    gap: _.unit(1);
+
+    .name {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bold;
+    }
+
+    .supportedSpecs {
+      font-size: 12px;
+      line-height: 16px;
+      color: #8c8e8f;
+      display: flex;
+    }
+  }
+}

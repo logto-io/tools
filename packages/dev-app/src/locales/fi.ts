@@ -41,6 +41,11 @@ const fi = {
       title: 'Base64-koodain ja -purkaja',
       description: 'Koodaa ja pura Base64- ja Base64URL-dataa suoraan selaimessa.',
     },
+    oauthProvidersExplorer: {
+      title: 'OAuth- ja OIDC-tarjoajien etsintätyökalu',
+      description:
+        'Etsi nopeasti OAuth-päätepisteitä ja liittyviä kehittämisresursseja suosituista OAuth- ja OIDC-tarjoajista.',
+    },
   },
 };
 

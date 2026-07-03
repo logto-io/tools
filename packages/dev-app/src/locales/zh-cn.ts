@@ -39,6 +39,10 @@ const zhCN = {
       title: 'Base64 编码 & 解码器',
       description: '在浏览器中直接编码和解码 Base64 与 Base64URL 数据。',
     },
+    oauthProvidersExplorer: {
+      title: 'OAuth & OIDC 提供商浏览器',
+      description: '快速查找流行的 OAuth 和 OIDC 提供商的 OAuth 端点和相关开发资源。',
+    },
   },
 };
 

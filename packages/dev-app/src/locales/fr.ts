@@ -42,6 +42,11 @@ const fr = {
       description:
         'Encodez et décodez des données Base64 et Base64URL directement dans le navigateur.',
     },
+    oauthProvidersExplorer: {
+      title: 'Exploreur de fournisseurs OAuth & OIDC',
+      description:
+        'Consultez rapidement les points de terminaison OAuth et les ressources de développement associées pour les fournisseurs populaires OAuth & OIDC.',
+    },
   },
 };
 

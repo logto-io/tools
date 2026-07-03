@@ -1,0 +1,39 @@
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+
+.header {
+  display: flex;
+  gap: _.unit(6);
+
+  .icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff1a;
+    border-radius: 8px;
+
+    > svg {
+      display: block;
+      height: 32px;
+      width: auto;
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 36px;
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 20px;
+      color: #ffffffb3;
+    }
+  }
+}

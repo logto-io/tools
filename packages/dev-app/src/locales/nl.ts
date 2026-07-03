@@ -40,6 +40,11 @@ const nl = {
       title: 'Base64-encoder en -decoder',
       description: 'Codeer en decodeer Base64- en Base64URL-gegevens direct in de browser.',
     },
+    oauthProvidersExplorer: {
+      title: 'OAuth & OIDC Providers Explorer',
+      description:
+        'Zoek snel naar OAuth- eindpunten en verwante ontwikkelingsbronnen voor populaire OAuth- & OIDC- providers.',
+    },
   },
 };
 

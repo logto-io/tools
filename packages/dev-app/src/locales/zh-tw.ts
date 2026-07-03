@@ -39,6 +39,10 @@ const zhTW = {
       title: 'Base64 編碼 & 解碼器',
       description: '在瀏覽器中直接編碼與解碼 Base64 及 Base64URL 資料。',
     },
+    oauthProvidersExplorer: {
+      title: 'OAuth 與 OIDC 供應商探索器',
+      description: '快速查找熱門 OAuth 和 OIDC 供應商的 OAuth 端點及相關開發資源。',
+    },
   },
 };
 

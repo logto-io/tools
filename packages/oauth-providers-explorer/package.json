@@ -1,0 +1,76 @@
+{
+  "name": "@logto/tools-oauth-providers-explorer",
+  "version": "0.0.0",
+  "description": "OAuth & OIDC providers explorer package for Logto tools.",
+  "type": "module",
+  "main": "src/index.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "precommit": "lint-staged --config ../../lint-staged.config.cjs",
+    "dev": "vitest",
+    "build": "tsc",
+    "lint": "eslint --ext .ts --ext .tsx src",
+    "stylelint": "stylelint \"src/**/*.scss\"",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "engines": {
+    "node": "^22.0.0"
+  },
+  "dependencies": {
+    "@logto/tools-i18nova": "workspace:^",
+    "classnames": "^2.3.1"
+  },
+  "peerDependencies": {
+    "@logto/website-ui-foundation": "^0.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@logto/website-ui-foundation": "^0.2.0",
+    "@silverhand/eslint-config": "^6.0.1",
+    "@silverhand/eslint-config-react": "^6.0.2",
+    "@silverhand/ts-config": "^6.0.0",
+    "@silverhand/ts-config-react": "^6.0.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.56.0",
+    "jsdom": "^26.1.0",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.0.0",
+    "stylelint": "^15.2.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.2.7",
+    "vite-plugin-svgr": "^4.5.0",
+    "vite-tsconfig-paths": "^6.0.0",
+    "vitest": "^3.2.4"
+  },
+  "eslintConfig": {
+    "extends": "@silverhand/react",
+    "rules": {
+      "react/jsx-no-target-blank": [
+        "error",
+        {
+          "allowReferrer": true
+        }
+      ],
+      "complexity": "off"
+    }
+  },
+  "prettier": "@silverhand/eslint-config/.prettierrc",
+  "stylelint": {
+    "extends": "@silverhand/eslint-config-react/.stylelintrc",
+    "rules": {
+      "scss/function-no-unknown": [
+        true,
+        {
+          "ignoreFunctions": [
+            "/^_./"
+          ]
+        }
+      ]
+    }
+  }
+}

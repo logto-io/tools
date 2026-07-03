@@ -41,6 +41,11 @@ const ru = {
       title: 'Кодировщик и декодер Base64',
       description: 'Кодируйте и декодируйте данные Base64 и Base64URL прямо в браузере.',
     },
+    oauthProvidersExplorer: {
+      title: 'Проводник по поставщикам OAuth и OIDC',
+      description:
+        'Быстрый поиск конечных точек OAuth и связанных ресурсов разработки для популярных поставщиков OAuth и OIDC.',
+    },
   },
 };
 

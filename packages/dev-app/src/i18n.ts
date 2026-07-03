@@ -12,6 +12,10 @@ import {
   withNamespace,
 } from '@logto/tools-i18nova';
 import { jwtDecoderResources, type JwtDecoderLocalePhrase } from '@logto/tools-jwt-decoder';
+import {
+  oauthProvidersExplorerResources,
+  type OAuthProvidersExplorerLocalePhrase,
+} from '@logto/tools-oauth-providers-explorer';
 
 import type en from './locales/en';
 
@@ -21,23 +25,27 @@ export type { Language } from '@logto/tools-i18nova';
 export type LocalePhrase = {
   dev_app: typeof en;
 } & JwtDecoderLocalePhrase &
-  Base64DecoderLocalePhrase;
+  Base64DecoderLocalePhrase &
+  OAuthProvidersExplorerLocalePhrase;
 
 const mergeLocale = async (
   language: Language,
   loader: () => Promise<{ default: typeof en }>
 ): Promise<{ default: LocalePhrase }> => {
-  const [devAppLocale, jwtDecoderLocale, base64DecoderLocale] = await Promise.all([
-    withNamespace('dev_app', loader),
-    resolveMayBeImport(jwtDecoderResources[language]),
-    resolveMayBeImport(base64DecoderResources[language]),
-  ]);
+  const [devAppLocale, jwtDecoderLocale, base64DecoderLocale, oauthProvidersExplorerLocale] =
+    await Promise.all([
+      withNamespace('dev_app', loader),
+      resolveMayBeImport(jwtDecoderResources[language]),
+      resolveMayBeImport(base64DecoderResources[language]),
+      resolveMayBeImport(oauthProvidersExplorerResources[language]),
+    ]);
 
   return {
     default: {
       ...devAppLocale.default,
       ...jwtDecoderLocale.default,
       ...base64DecoderLocale.default,
+      ...oauthProvidersExplorerLocale.default,
     },
   };
 };

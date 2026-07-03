@@ -40,6 +40,11 @@ const ja = {
       description:
         'Base64 と Base64URL のペイロードをブラウザ上で直接エンコード・デコードできます。',
     },
+    oauthProvidersExplorer: {
+      title: 'OAuth & OIDC プロバイダー エクスプローラー',
+      description:
+        '人気の OAuth & OIDC プロバイダーの OAuth エンドポイントと関連する開発リソースを素早く調べる。',
+    },
   },
 };
 

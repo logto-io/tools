@@ -1,0 +1,24 @@
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+
+.documentation {
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: _.unit(4);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: _.unit(2);
+  text-decoration: none;
+  color: #947dff;
+  width: fit-content;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -39,6 +39,11 @@ const ko = {
       title: 'Base64 인코더 및 디코더',
       description: '브라우저에서 Base64와 Base64URL 데이터를 바로 인코딩하고 디코딩하세요.',
     },
+    oauthProvidersExplorer: {
+      title: 'OAuth 및 OIDC 공급자 탐색기',
+      description:
+        '인기 있는 OAuth 및 OIDC 공급자의 OAuth 엔드포인트와 관련 개발 리소스를 빠르게 찾아보세요.',
+    },
   },
 };
 

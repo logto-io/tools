@@ -1,0 +1,33 @@
+@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+
+.headline {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  color: #fff;
+  margin: _.unit(25) 0 _.unit(6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: _.unit(4);
+
+  h2 {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+
+    .highlight {
+      color: #947dff;
+    }
+  }
+
+  .subtitle {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: normal;
+    color: #ffffffb3;
+    text-align: center;
+    max-width: 900px;
+  }
+}
