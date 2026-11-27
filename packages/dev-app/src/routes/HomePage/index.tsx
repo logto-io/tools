@@ -1,4 +1,3 @@
-import { Button, Tag } from '@logto/website-ui-foundation';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
@@ -20,15 +19,15 @@ const HomePage = () => {
             <h1 className={styles.title}>{t('home.title')}</h1>
             <p className={styles.description}>{t('home.description')}</p>
             {firstAvailableRoute && (
-              <Button className={styles.heroButton} href={firstAvailableRoute.path} type="primary">
+              <Link className={styles.heroButton} to={firstAvailableRoute.path}>
                 {t('home.open_tool')}
-              </Button>
+              </Link>
             )}
           </div>
           <div className={styles.tags}>
-            <Tag className={styles.tag} text={t('home.tags.topbar')} />
-            <Tag className={styles.tag} text={t('home.tags.routes')} />
-            <Tag className={styles.tag} text={t('home.tags.i18n')} />
+            <span className={styles.tag}>{t('home.tags.topbar')}</span>
+            <span className={styles.tag}>{t('home.tags.routes')}</span>
+            <span className={styles.tag}>{t('home.tags.i18n')}</span>
           </div>
         </div>
         <div className={styles.grid}>

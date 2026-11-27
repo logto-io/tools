@@ -1,48 +1,54 @@
-@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+@use '../../scss/design-system' as ds;
 
 .item {
+  @include ds.card(var(--space-16) var(--space-20));
   display: flex;
-  border-radius: 12px;
-  padding: _.unit(4);
-  gap: _.unit(3);
+  align-items: center;
+  gap: var(--space-16);
   text-decoration: none;
-  color: #fff;
-  background: #ffffff1a;
-  transition: transform 0.3s ease, background 0.3s ease;
+  color: var(--text);
+  transition:
+    border-color var(--duration-fast),
+    background-color var(--duration-fast);
 
   &:hover {
-    background: rgba(180, 180, 180, 8%);
+    border-color: var(--line-2);
+    background: var(--tint);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
   }
 
   .logo {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
+    flex: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--text);
 
     > svg {
       display: block;
-      height: 100%;
-      width: auto;
+      width: 32px;
+      height: 32px;
     }
   }
 
   .data {
     display: flex;
     flex-direction: column;
-    gap: _.unit(1);
+    gap: var(--space-2);
+    min-width: 0;
 
     .name {
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: bold;
+      @include ds.subtitle;
     }
 
     .supportedSpecs {
-      font-size: 12px;
-      line-height: 16px;
-      color: #8c8e8f;
+      @include ds.label(var(--muted));
       display: flex;
     }
   }

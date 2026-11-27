@@ -1,5 +1,4 @@
-@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
-@use '@logto/website-ui-foundation/scss/_media.scss' as media;
+@use '../../scss/design-system' as ds;
 @use '../../scss/editor' as editor;
 
 .editorPanel {
@@ -16,80 +15,104 @@
 .jwtEditor {
   @include editor.code-editor-base;
   flex: 1;
-  background: #141420;
+  min-height: 220px;
+
+  &:hover:not(.readOnly, .signatureVerified, .signatureInvalid) {
+    border-color: var(--line-3);
+  }
+
+  &:focus-within:not(.readOnly) {
+    border-color: var(--line-3);
+    outline-color: var(--line-2);
+  }
 
   &.readOnly {
-    background-color: rgba(209, 210, 255, 15%);
-    border-color: transparent;
+    background: var(--tint);
+    border-color: var(--line);
   }
 
   &.fallback {
-    padding: _.unit(6);
+    padding: var(--space-24);
     resize: none;
     font-family: inherit;
   }
 
   &.signatureVerified {
-    background: rgba(50, 135, 61, 15%);
-    border-color: #32873d;
+    background: rgba(11, 127, 114, 4%);
+    border-color: rgba(11, 127, 114, 36%);
+
+    &:focus-within {
+      border-color: #0b7f72;
+      outline-color: rgba(11, 127, 114, 16%);
+    }
   }
 
   &.signatureInvalid {
-    background: rgba(148, 3, 65, 15%);
-    border-color: #940341;
+    background: rgba(221, 55, 48, 4%);
+    border-color: rgba(221, 55, 48, 38%);
+
+    &:focus-within {
+      border-color: var(--danger);
+      outline-color: rgba(221, 55, 48, 16%);
+    }
   }
 
-  pre {
-    /* stylelint-disable-next-line declaration-no-important -- overwrite react-simple-code-editor hardcoded inline style */
-    word-break: break-all !important;
-  }
-
+  pre,
   textarea {
     /* stylelint-disable-next-line declaration-no-important -- overwrite react-simple-code-editor hardcoded inline style */
     word-break: break-all !important;
   }
+
+  textarea::placeholder {
+    color: var(--dim);
+  }
 }
 
 .signatureStatus {
-  color: #fff;
+  @include ds.ui;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  padding: _.unit(3.5);
+  gap: var(--space-6);
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  padding: var(--space-12) var(--space-16);
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
 
   > svg {
-    margin-right: _.unit(1);
+    width: 18px;
+    height: 18px;
   }
 
   &.verified {
-    background: #32873d;
+    background: #edf7f5;
+    border-color: rgba(11, 127, 114, 36%);
+    border-top-color: rgba(11, 127, 114, 18%);
+    color: #0b7f72;
   }
 
   &.invalid {
-    background: #940341;
+    background: #fdf0ef;
+    border-color: rgba(221, 55, 48, 38%);
+    border-top-color: rgba(221, 55, 48, 18%);
+    color: var(--danger);
   }
 }
 
 :global {
   .token.tokenHeader {
-    color: #ff589d;
+    color: #c41d5f;
   }
 
   .token.tokenPayload {
-    color: #bf85ff;
+    color: #6d28d9;
   }
 
   .token.tokenSignature {
-    color: #42c4ed;
+    color: #0277bd;
   }
 }
-

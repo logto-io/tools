@@ -1,17 +1,16 @@
-@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
-@use '@logto/website-ui-foundation/scss/_media.scss' as media;
+@use '../../scss/design-system' as ds;
 
 .section {
-  padding-bottom: _.unit(20);
+  @include ds.root;
+  padding-block: var(--space-48) var(--space-64);
 
-  @include media.mobile {
-    padding-bottom: _.unit(12);
+  @include ds.narrow {
+    padding-block: var(--space-32) var(--space-48);
   }
 }
 
 .contentWrapper {
-  @include _.section-container;
-  margin: 0 auto;
+  @include ds.wrap;
   display: flex;
   flex-direction: column;
   align-items: center;

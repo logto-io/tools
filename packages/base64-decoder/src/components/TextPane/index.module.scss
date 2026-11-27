@@ -1,14 +1,9 @@
-@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
 @use '../../scss/editor' as editor;
 
 .pane {
   display: flex;
   flex-direction: column;
   flex: 1;
-
-  &:first-child {
-    margin-bottom: _.unit(6);
-  }
 }
 
 .title {
@@ -17,30 +12,43 @@
 
 .textarea {
   @include editor.code-editor-base;
-  background: #141420;
-  padding: _.unit(6);
+  padding: var(--space-20);
   resize: vertical;
-  min-height: _.unit(60);
+  min-height: 240px;
   flex: 1;
-  outline: none;
   word-break: break-all;
 
   &::placeholder {
-    color: #ffffff4d;
+    color: var(--dim);
   }
 
-  &:focus-visible {
-    outline: none;
-    border-color: #ffffffb3;
+  &:hover:not(.readOnly) {
+    border-color: var(--line-3);
+  }
+
+  &:focus:not(.readOnly) {
+    border-color: var(--line-3);
+    outline-color: var(--line-2);
   }
 
   &.readOnly {
-    background-color: rgba(209, 210, 255, 15%);
-    border: none;
+    background: var(--tint);
+    border-color: var(--line);
     resize: none;
+
+    &:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
   }
 
   &.invalid {
-    border-color: #ff6d6d;
+    border-color: var(--danger);
+
+    &:hover,
+    &:focus {
+      border-color: var(--danger);
+      outline-color: rgba(221, 55, 48, 16%);
+    }
   }
 }

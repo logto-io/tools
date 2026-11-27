@@ -1,12 +1,11 @@
-@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
-@use '@logto/website-ui-foundation/scss/_media.scss' as media;
+@use '../../scss/design-system' as ds;
 
 .container {
   position: relative;
   width: 100%;
-  margin-top: _.unit(6);
+  margin-top: var(--space-24);
   display: flex;
-  gap: _.unit(3);
+  gap: var(--space-12);
 
   .searchWrapper {
     position: relative;
@@ -15,46 +14,63 @@
 
   .searchIcon {
     position: absolute;
-    left: _.unit(4);
+    inset-inline-start: var(--space-16);
     top: 50%;
     transform: translateY(-50%);
-    color: #8c8e8f;
-    width: 20px;
-    height: 20px;
+    color: var(--dim);
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
   }
 
   .input {
+    @include ds.caption(var(--text));
+    appearance: none;
     width: 100%;
-    height: _.unit(12);
-    background: transparent;
-    border: 1px solid #5c5f60;
-    border-radius: _.unit(2);
-    padding: 0 _.unit(4) 0 _.unit(12);
-    color: #fff;
-    font-size: 1rem;
+    height: 44px;
+    background: var(--surface);
+    border: 1px solid var(--line-2);
+    border-radius: var(--radius-md);
+    padding-inline: var(--space-40);
+    font-family: inherit;
     outline: 3px solid transparent;
-    transition: outline 0.2s ease-in-out;
+    transition:
+      outline-color var(--duration-fast),
+      border-color var(--duration-fast);
 
     &::placeholder {
-      color: #8c8e8f;
+      color: var(--dim);
+    }
+
+    &:hover {
+      border-color: var(--line-3);
     }
 
     &:focus {
-      outline: 3px solid #947dff99;
+      border-color: var(--line-3);
+      outline-color: var(--line-2);
     }
   }
 
   .clearIcon {
     position: absolute;
-    right: _.unit(4);
+    inset-inline-end: var(--space-16);
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
+    color: var(--dim);
     cursor: pointer;
+    transition: color var(--duration-fast);
 
     &:hover {
-      color: #8c8e8f;
+      color: var(--text);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+      border-radius: var(--radius-xs);
     }
   }
 }

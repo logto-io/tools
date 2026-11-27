@@ -1,20 +1,20 @@
-@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
-@use '@logto/website-ui-foundation/scss/_media.scss' as media;
-
+@use './scss/design-system' as ds;
 
 .contentForm {
   display: flex;
-  gap: _.unit(6);
+  gap: var(--space-24);
   width: 100%;
-  margin-bottom: _.unit(6);
+  margin-bottom: var(--space-24);
   align-items: stretch;
 
   .jwtColumn {
-    flex: 4; // 4 parts
+    flex: 4;
+    min-width: 0;
   }
 
   .contentColumn {
-    flex: 5; // 5 parts
+    flex: 5;
+    min-width: 0;
   }
 
   &.encode {
@@ -27,14 +27,12 @@
     }
   }
 
-  textarea {
-    &:focus-visible {
-      outline: none;
-    }
+  textarea:focus-visible {
+    outline: none;
   }
 }
 
-@include media.mobile {
+@include ds.narrow {
   .contentForm {
     flex-direction: column;
   }
@@ -44,4 +42,3 @@
     flex: 1;
   }
 }
-
