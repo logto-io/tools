@@ -1,22 +1,14 @@
 .page {
   min-height: 100vh;
-  background: #141420;
-  color: #f5f7ff;
+  background: var(--surface);
+  color: var(--text);
 }
 
 .main {
-  min-height: calc(100vh - 113px);
-  padding-top: 113px;
-
-  @media (width <= 768px) {
-    min-height: calc(100vh - 97px);
-    padding-top: 97px;
-  }
+  min-height: calc(100vh - var(--header-height));
+  padding-top: var(--header-height);
 }
 
 .homeMain {
-  background:
-    radial-gradient(circle at top left, rgba(123, 90, 255, 28%) 0%, rgba(123, 90, 255, 0%) 34%),
-    radial-gradient(circle at top right, rgba(90, 188, 255, 18%) 0%, rgba(90, 188, 255, 0%) 28%),
-    linear-gradient(180deg, #181829 0%, #10111f 100%);
+  background: var(--surface);
 }

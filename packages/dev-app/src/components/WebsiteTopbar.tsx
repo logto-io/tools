@@ -5,7 +5,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import CloseIcon from '../assets/cross.svg?react';
 import GitHubIcon from '../assets/github.svg?react';
 import MenuIcon from '../assets/hamburger.svg?react';
-import logo from '../assets/logo.webp';
+import logo from '../assets/logto-dark.svg';
 import { languageTitles, languages, type Language, usePhrases } from '../i18n';
 import { toolRoutes } from '../routes';
 

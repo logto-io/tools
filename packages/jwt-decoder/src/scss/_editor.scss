@@ -1,20 +1,23 @@
-@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+@use './design-system' as ds;
 
 @mixin editor-title {
-  color: #fff;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  margin-bottom: _.unit(1.5);
+  @include ds.ui;
+  margin-bottom: var(--space-8);
 }
 
 @mixin code-editor-base {
-  border-radius: 8px;
   width: 100%;
-  color: #fff;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--f-mono);
   font-size: 14px;
-  line-height: 20px;
+  line-height: 1.6;
   direction: ltr;
-  border: 2px solid #ffffff80;
-  font-family: 'Roboto Mono', monospace;
+  outline: 3px solid transparent;
+  transition:
+    border-color var(--duration-fast),
+    outline-color var(--duration-fast),
+    background-color var(--duration-fast);
 }

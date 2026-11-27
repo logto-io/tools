@@ -14,11 +14,12 @@ const Headline = ({ mode, onModeChange }: Props) => {
   const switchLabel = mode === EditorMode.Decode ? t('encoder') : t('decoder');
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <div className={styles.headline}>
         <h1>Base64 {modeLabel}</h1>
         <span className={styles.spacer}>/</span>
         <button
+          type="button"
           className={styles.switchButton}
           onClick={() => {
             onModeChange(mode === EditorMode.Decode ? EditorMode.Encode : EditorMode.Decode);

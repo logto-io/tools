@@ -1,10 +1,14 @@
-@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+@use '../../scss/design-system' as ds;
 
 .actionBar {
   width: 100%;
   display: flex;
-  gap: _.unit(6);
-  align-items: flex-end;
+  gap: var(--space-12);
+  align-items: center;
   justify-content: flex-end;
-  margin: _.unit(6) 0;
+  margin-top: var(--space-24);
+}
+
+.copyButton {
+  @include ds.button-primary;
 }

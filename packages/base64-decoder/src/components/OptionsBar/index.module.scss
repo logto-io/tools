@@ -1,40 +1,41 @@
-@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
-@use '@logto/website-ui-foundation/scss/_media.scss' as media;
+@use '../../scss/design-system' as ds;
 
 .optionsBar {
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: _.unit(6);
-  color: #fff;
+  margin-bottom: var(--space-24);
+  color: var(--text);
 }
 
 .option {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: _.unit(2);
+  gap: var(--space-8);
   cursor: pointer;
 
   input[type='checkbox'] {
     width: 16px;
     height: 16px;
-    accent-color: #7958ff;
+    margin: 0;
+    accent-color: var(--text);
     cursor: pointer;
   }
 }
 
 .label {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
+  @include ds.ui;
 }
 
 .hint {
-  font-size: 13px;
-  line-height: 20px;
-  color: #ffffff80;
+  @include ds.fine(var(--muted));
 
-  @include media.mobile {
+  a {
+    @include ds.link-inline;
+  }
+
+  @include ds.narrow {
     display: none;
   }
 }

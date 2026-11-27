@@ -1,4 +1,4 @@
-import { Button, Dropdown, DropdownItem } from '@logto/website-ui-foundation';
+import { Dropdown, DropdownItem } from '@logto/website-ui-foundation';
 import { useState, useRef, useCallback } from 'react';
 
 import ArrowDown from '../../assets/arrow-down.svg?react';
@@ -11,7 +11,7 @@ import useActions from './use-actions';
 const ActionBar = () => {
   const { t } = usePhrases();
   const [showDropdown, setShowDropdown] = useState(false);
-  const examplesButtonRef = useRef(null);
+  const examplesButtonRef = useRef<HTMLButtonElement>(null);
   const { setJwtExample, onShareUrl } = useActions();
 
   const onCloseDropdown = useCallback(() => {
@@ -20,18 +20,20 @@ const ActionBar = () => {
 
   return (
     <div className={styles.actionBar}>
-      <Button
-        buttonRef={examplesButtonRef}
+      <button
+        ref={examplesButtonRef}
+        type="button"
         className={styles.examplesButton}
         onClick={() => {
           setShowDropdown(!showDropdown);
         }}
       >
-        {t('jwt_examples')} <ArrowDown />
-      </Button>
-      <Button type="primary" onClick={onShareUrl}>
+        {t('jwt_examples')}
+        <ArrowDown />
+      </button>
+      <button type="button" className={styles.shareButton} onClick={onShareUrl}>
         {t('share_jwt')}
-      </Button>
+      </button>
       <Dropdown
         isFullWidth
         className={styles.examplesDropdown}

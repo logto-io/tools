@@ -1,4 +1,3 @@
-import { Button } from '@logto/website-ui-foundation';
 import { toast } from 'react-hot-toast';
 
 import { usePhrases } from '../../i18n';
@@ -23,9 +22,9 @@ const ActionBar = ({ output }: Props) => {
 
   return (
     <div className={styles.actionBar}>
-      <Button type="primary" disabled={output === ''} onClick={onCopy}>
+      <button type="button" className={styles.copyButton} disabled={output === ''} onClick={onCopy}>
         {t('copy')}
-      </Button>
+      </button>
     </div>
   );
 };

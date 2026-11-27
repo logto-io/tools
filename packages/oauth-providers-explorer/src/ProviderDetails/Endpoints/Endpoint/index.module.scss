@@ -1,48 +1,59 @@
-@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
+@use '../../../scss/design-system' as ds;
 
 .endpointUrl {
-  height: 44px;
-  background-color: #141420cc;
-  border-radius: 8px;
-  padding: _.unit(3);
-  font-size: 14px;
-  line-height: 20px;
-  color: #fff;
-  font-weight: 600;
+  min-height: 44px;
+  background: var(--tint);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8) var(--space-12);
+  font-family: var(--f-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+  font-weight: 500;
+  word-break: break-all;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-12);
 
   .icon {
-    // Reset native button styles; this control renders as a <button>.
     border: none;
     background: none;
-    color: inherit;
+    color: var(--muted);
     font: inherit;
+    flex: none;
     width: 28px;
     height: 28px;
-    border-radius: 4px;
-    padding: _.unit(1);
+    border-radius: var(--radius-xs);
+    padding: var(--space-4);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition:
+      background-color var(--duration-fast),
+      color var(--duration-fast);
 
     > svg {
-      color: #947dff;
-      width: 20px;
-      height: 20px;
+      color: inherit;
+      width: 16px;
+      height: 16px;
     }
 
     &:hover {
-      background-color: #2a2a2a;
+      background: var(--line);
+      color: var(--text);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
     }
   }
 }
 
 .description {
-  font-size: 14px;
-  line-height: 20px;
-  color: #9da3ae;
-  margin-top: _.unit(2);
+  @include ds.caption;
+  margin-top: var(--space-8);
 }

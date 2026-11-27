@@ -1,31 +1,47 @@
-@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
-@use '@logto/website-ui-foundation/scss/_media.scss' as media;
+@use '../../scss/design-system' as ds;
 
 .actionBar {
   width: 100%;
   display: flex;
-  gap: _.unit(6);
-  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  align-items: center;
   justify-content: flex-end;
-  margin: _.unit(6) 0;
+  margin-top: var(--space-24);
+}
 
-  .examplesButton.examplesButton {
-    color: #fff;
-  }
+.examplesButton {
+  @include ds.button-secondary;
 
-  .examplesButton {
-    svg {
-      margin-inline-start: _.unit(2);
-    }
+  svg {
+    width: 16px;
+    height: 16px;
+    color: var(--muted);
   }
 }
 
+.shareButton {
+  @include ds.button-primary;
+}
+
+// Portaled under `<body>` by `react-modal`, so declare tokens locally
 .examplesDropdown {
-  color: #fff;
-  background: #34354a;
+  @include ds.tokens;
+  --color-dropdown-item: var(--text);
+  --color-dropdown-item-background-hover: var(--tint);
+  --color-dropdown-scrollbar-thumb: var(--line-2);
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-overlay);
+  padding: var(--space-6);
+  color: var(--text);
+  font-family: var(--f-body);
 
   li {
-    font-weight: 600;
-    padding: _.unit(2) _.unit(3);
+    @include ds.ui;
+    font-family: var(--f-mono);
+    padding: var(--space-8) var(--space-12);
+    border-radius: var(--radius-xs);
   }
 }

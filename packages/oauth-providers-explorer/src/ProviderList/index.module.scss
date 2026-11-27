@@ -1,35 +1,31 @@
-@use '@logto/website-ui-foundation/scss/_underscore.scss' as _;
-@use '@logto/website-ui-foundation/scss/_media.scss' as media;
+@use '../scss/design-system' as ds;
 
 .hint {
+  @include ds.caption;
   display: flex;
   align-items: center;
-  gap: _.unit(2);
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: normal;
-  color: #ffffffb3;
-  margin-top: _.unit(8);
+  gap: var(--space-8);
+  margin-top: var(--space-8);
 
   .shieldIcon {
-    width: 20px;
-    height: 20px;
-    color: #947dff;
+    width: 18px;
+    height: 18px;
+    color: var(--text);
   }
 }
 
 .list {
-  margin-top: _.unit(12);
+  margin-top: var(--space-32);
   display: grid;
   width: 100%;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: _.unit(5);
+  gap: var(--space-16);
 
-  @include media.medium {
+  @include ds.narrow {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @include media.mobile {
+  @media (max-width: 640px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
